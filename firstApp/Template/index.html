@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>First Website</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous"></script>
+</head>
+
+<body class="vh-100">
+
+    <div class="d-flex justify-content-end p-4">
+        {% if request.user.is_authenticated %}
+        <span class="px-2">{{request.user.username}}</span>
+        <button type="button" class="btn btn-secondary">
+            <a class="text-decoration-none text-white" href="{% url 'logout' %}">logout</a>
+        </button>
+        {% endif %}
+    </div>
+
+    <div class="d-flex align-items-center justify-content-center flex-column h-100">
+        <h3> Welcome to the welcome page</h3>
+
+        <div> <button type="button" class="btn btn-primary btn-sm">
+                <a href="{% url 'addEntry' %}" class="text-white text-decoration-none">ADD ENTRY</a>
+            </button>
+            <button type="button" class="btn btn-primary btn-sm">
+                <a href="{% url 'login' %}" class="text-white text-decoration-none">LOG IN</a>
+            </button>
+            <button type="button" class="btn btn-primary btn-sm">
+                <a href="{% url 'registration' %}" class="text-white text-decoration-none">REGISTRATION</a>
+            </button>
+        </div>
+    </div>
+    <!-- s
+    <div>
+        <h1>Name: {{name}}</h1>
+        <h1>Founder: {{founder}}</h1>
+        <h1>Living in: {{living_in}}</h1>
+        <h1>Husband: {{husband}}</h1>
+    </div> -->
+</body>
+
+</html>
