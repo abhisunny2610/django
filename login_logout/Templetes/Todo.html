@@ -63,7 +63,9 @@
        {% csrf_token %}
        <div class="d-flex gap-2">
            <input type="text" class="form-control mr-3" placeholder="Add your new  todo" name="content">
-           <button type="submit" class="ml-3 btn btn-primary" >Add</button>
+           <button type="submit" class="ml-3 btn btn-primary" {% if not permission.add %}
+             disabled
+           {% endif %} >Add</button>
        </div>
    </form>
    {% endif %}
@@ -78,10 +80,14 @@
                 </p>
                 <div id="button" class="buttons d-flex justify-content-end gap-1">
                     <input type="checkbox" data-id={{item.id}} {% if item.isCompleted %} checked {% endif %}>
+                    {% if permission.change %}
                     <button type="btn" class="btn btn-sm "><a href="{% url 'updateTodo' item.id %}"><i
-                                class="fa-solid fa-pen" style="color: #d3a80d;"></i></a></button>
+                        class="fa-solid fa-pen" style="color: #d3a80d;"></i></a></button>
+                    {% endif %}
+                    {% if permission.delete %}  
                     <button class="btn btn-sm"><a href="{% url 'deleteTodo' item.id %}"><i class="fa-solid fa-trash"
-                                style="color: #d31717;"></i></a></button>
+                        style="color: #d31717;"></i></a></button>
+                    {% endif %}
                 </div>
             </div>
             {% endfor %}

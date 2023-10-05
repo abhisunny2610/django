@@ -23,7 +23,7 @@ def signup(request):
         view_permission = Permission.objects.get(codename="view_todos", content_type=content_type)
         add_permission = Permission.objects.get(codename="add_todos", content_type=content_type)
         update_permission = Permission.objects.get(codename="change_todos", content_type=content_type)
-        delete_permission = Permission.objects.get(codename="delete_todos", content_type=content_type)
+        
 
         username = request.POST.get("username")
         email = request.POST.get("email")
@@ -32,7 +32,7 @@ def signup(request):
 
         if (password == cpassword):
             user = User.objects.create_user(username, email, password)
-            user.user_permissions.add(view_permission, add_permission, update_permission, delete_permission)
+            user.user_permissions.add(view_permission, add_permission, update_permission)
             user.save()
 
             return redirect("signin")

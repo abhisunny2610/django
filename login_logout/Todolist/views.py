@@ -29,7 +29,7 @@ def addTodo(request):
         permission = getPermission(request.user, "Todolist", "todos")
         todos = Todos.objects.filter(user_id=request.user.id)
         # collecting all todos
-        print("User Permission: ", permission)
+        # print("User Permission: ", permission)
         return render(request, "Todo.html", {"todos": todos, "permission": permission})
 
     if request.method == "POST" and request.user.is_authenticated:
@@ -47,30 +47,32 @@ def addTodo(request):
 
 
 def deleteTodo(request, id):
-    if request.method == "GET":
-        item = Todos.objects.get(pk=id)
-        item.delete()
-        return redirect("addTodo")
+    if request.method == "GET" and request.user.is_authenticated:
+        permission = getPermission(request.user, "Todolist", "todos")
+        if permission.get('delete'):
+            item = Todos.objects.get(pk=id)
+            item.delete()
+            return redirect("addTodo")
 
 
 def updateTodo(request, id):
     if request.method == "GET":
+        permission = getPermission(request.user, "Todolist", "todos")
         item = Todos.objects.get(pk=id)
-        return render(request, "updateTodo.html", {"item": item})
+        return render(request, "updateTodo.html", {"item": item, "permission": permission})
 
-    if request.method == "POST":
-        content = request.POST.get("content")
-        isCompleted = request.POST.get("isCompleted")
-        item = Todos.objects.get(pk=id)
+    if request.method == "POST" and request.user.is_authenticated:
+        permission = getPermission(request.user, "Todolist", "todos")
+        if permission.get("change"):
+            content = request.POST.get("content")
+            isCompleted = request.POST.get("isCompleted")
+            item = Todos.objects.get(pk=id)
 
-        if content:
-            item.content = content
+            if content:
+                item.content = content
 
-        if isCompleted:
-            item.isCompleted = jsBool(isCompleted)
-        item.save()
+            if isCompleted:
+                item.isCompleted = jsBool(isCompleted)
+            item.save()
 
-    return redirect("addTodo")
-
-def add():
-    pass
+        return redirect("addTodo")
