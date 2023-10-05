@@ -34,7 +34,7 @@ def addTodo(request):
 
     if request.method == "POST" and request.user.is_authenticated:
 
-        permission = getPermission(request.user, "Todolist", "Todos")
+        permission = getPermission(request.user, "Todolist", "todos")
 
         if permission.get("add"):
             content = request.POST.get("content")
