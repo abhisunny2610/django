@@ -71,3 +71,6 @@ def updateTodo(request, id):
         item.save()
 
     return redirect("addTodo")
+
+def add():
+    pass
