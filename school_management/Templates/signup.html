@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,111 +7,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign Up</title>
-
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-
-
-        .container {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            background-image: url('./41Z_2106.w009.n001.5B.p8.5.jpg');
-            background-position: cover;
-            background-position-x: right;
-            background-position-y: bottom;
-            background-size: 250px;
-            background-repeat: no-repeat;
-
-            >.left-side {
-                width: 40%;
-                height: 100vh;
-                background-image: url('./gradient_2.jpg');
-                background-position: center;
-                background-size: cover;
-                background-repeat: no-repeat;
-
-                >h3 {
-                    width: 250px;
-                    margin-top: 100px;
-                    /* text-align: center; */
-                    font-size: 40px;
-                    color: white;
-                    font-weight: 100;
-                    margin-left: 100px;
-                }
-
-                > p{
-                    width: 250px;
-                    margin-left: 100px;
-                    /* text-align: center; */
-                    margin-top: 40px;
-                    color: white;
-                    line-height: 1;
-                    letter-spacing: 1px;
-                }
-            }
-
-            >.right-side {
-                margin-right: 200px;
-
-                >p {
-                    text-align: center;
-                    font-size: 18px;
-                    margin-top: 40px;
-                }
-
-            }
-
-
-        }
-
-        label {
-            display: block;
-            font-size: 14px;
-            font-family: 'Courier New', Courier, monospace;
-            color: gray;
-            margin-bottom: 5px;
-        }
-
-        input {
-            border-bottom: 1px solid grey;
-            outline: none;
-            border-top: none;
-            border-right: none;
-            border-left: none;
-            margin-bottom: 40px;
-            width: 300px;
-            font-size: 16px;
-            font-family: sans-serif;
-            padding: 0px 5px;
-        }
-
-        input:focus {
-            border-bottom: 2px solid black;
-        }
-
-        button {
-            height: 2rem;
-            width: fit-content;
-            padding: 3px 20px;
-            background-color: rgb(112, 186, 1);
-            border: none;
-            border-radius: 2px;
-            font-size: 16px;
-            font-weight: bold;
-            color: white;
-        }
-
-        button:active {
-            background-color: darkgreen;
-        }
-    </style>
+    <link rel="stylesheet" href="{% static 'Styles/signup.css' %}">
 </head>
 
 <body>

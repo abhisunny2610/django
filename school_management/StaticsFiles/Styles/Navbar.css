@@ -1,0 +1,42 @@
+:root{
+    --primary: #00273a;
+    --secondary: #FB7D5B;
+    --white: rgb(232, 232, 232);
+}
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+nav{
+    height: 100%;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 20px;
+    background-color: var(--primary);
+
+    > .type{
+        
+        > h4{
+            border-radius: 30px;
+            background-color: var(--secondary);
+            font-size: 30px;
+            padding: 5px;
+        }
+    }
+
+    > .links{
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        > a{
+            color: var(--white);
+        }
+    }
+}
