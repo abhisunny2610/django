@@ -2,48 +2,94 @@ body{
     background-color: var(--main-background);
 }
 
+.navbar {
+    padding-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    > .title{
+        font-size: 25px;
+        color: var(--primary);
+    }
+
+
+    > .menus{
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        /* justify-content: center; */
+
+        > a{
+            background-color: var(--background-white);
+            padding: 10px;
+            border-radius: 10px;
+            color: var(--grey);
+        }
+
+        > .profile{
+            display: flex;
+            /* align-items: center; */
+            justify-content: center;
+            background-color: var(--background-white);
+            padding: 10px;
+            border-radius: 10px;
+            width: fit-content;
+
+            > .avatar{
+                margin-right: 10px;
+            }
+        }
+    }
+}
+
 
 .dashboard-container {
 
     margin-right: 20px;
     margin-left: 100px;
 
-    >.navbar {
-        padding-top: 20px;
+    > .total-counter{
+        background-color: var(--white);
+        margin-top: 40px;
+        padding: 20px 0;
         display: flex;
         align-items: center;
-        justify-content: space-between;
+        justify-content: space-evenly;
 
-        > .title{
-            font-size: 25px;
-            color: var(--primary);
-        }
-
-
-        > .menus{
+        > .card{
             display: flex;
-            gap: 10px;
             align-items: center;
-            /* justify-content: center; */
 
-            > a{
-                background-color: var(--background-white);
-                padding: 10px;
-                border-radius: 10px;
-                color: var(--grey);
+            > .avatar{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 50%;
+                background-color: var(--primary);
+                text-align: center;
+                /* padding-top: 5px; */
+                color: var(--white);
+                margin-right: 10px;
+                height: 50px;
+                width: 50px;
+
+                > span{
+                    font-size: 30px;
+                    text-align: center;
+                }
+
             }
 
-            > .profile{
-                display: flex;
-                /* align-items: center; */
-                justify-content: center;
-                background-color: var(--background-white);
-                padding: 10px;
-                border-radius: 10px;
-                width: fit-content;
+            > .category{
+                > p{
+                    font-size: 14px;
+                    color: var(--grey);
+                }
 
-                > .avatar{
-                    margin-right: 10px;
+                > h4{
+                    font-size: 18px;
+                    color: var(--primary);
                 }
             }
         }
