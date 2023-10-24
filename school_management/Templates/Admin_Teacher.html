@@ -1,0 +1,215 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'Styles/Admin_Dashboard.css' %}">
+</head>
+
+<body>
+    {% include "Admin_Navbar.html" %}
+
+    <div class="dashboard-container">
+        {% include "Admin_uNabvar.html" %}
+
+        <div class="search-add">
+            <div class="left">
+                <span class="material-symbols-outlined">
+                    search
+                </span>
+                <input type="text" id="search-input" name="search-student" placeholder="Search Here...">
+            </div>
+            <div class="right">
+                <form action="">
+                    <div class="sort-select">
+                        <select name="sort" id="sort">
+                            <option value="latest">Latest</option>
+                            <option value="earliest">Earliest</option>
+                            <option value="ascending">Ascending</option>
+                            <option value="descending">Descending</option>
+                        </select>
+                    </div>
+                </form>
+                <button>+ Add Teacher</button>
+            </div>
+        </div>
+
+        <div class="teachers-card">
+            <div class="card">
+                <div class="img">
+
+                </div>
+                <div class="intro">
+                    <h4>Abhishek Singh</h4>
+                    <p>Teacher</p>
+                </div>
+                <div class="subject">
+                    <span>Mathematics</span>
+                    <span>Science</span>
+                    <span>Englisg</span>
+                </div>
+                <div class="actions d-flex">
+                    <div class="left">
+                        <a href=""><span class="material-symbols-outlined">
+                                visibility
+                            </span>View Profile</a>
+                    </div>
+                    <div class="right">
+                        <button>
+                            <span class="material-symbols-outlined">
+                                visibility
+                            </span>
+                        </button>
+                        <button>
+                            <span class="material-symbols-outlined">
+                                delete
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="img">
+
+                </div>
+                <div class="intro">
+                    <h4>Abhishek Singh</h4>
+                    <p>Teacher</p>
+                </div>
+                <div class="subject">
+                    <span>Mathematics</span>
+                    <span>Science</span>
+                    <span>Englisg</span>
+                </div>
+                <div class="actions d-flex">
+                    <div class="left">
+                        <a href=""><span class="material-symbols-outlined">
+                                visibility
+                            </span>View Profile</a>
+                    </div>
+                    <div class="right">
+                        <button>
+                            <span class="material-symbols-outlined">
+                                visibility
+                            </span>
+                        </button>
+                        <button>
+                            <span class="material-symbols-outlined">
+                                delete
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="img">
+
+                </div>
+                <div class="intro">
+                    <h4>Abhishek Singh</h4>
+                    <p>Teacher</p>
+                </div>
+                <div class="subject">
+                    <span>Mathematics</span>
+                    <span>Science</span>
+                    <span>Englisg</span>
+                </div>
+                <div class="actions d-flex">
+                    <div class="left">
+                        <a href=""><span class="material-symbols-outlined">
+                                visibility
+                            </span>View Profile</a>
+                    </div>
+                    <div class="right">
+                        <button>
+                            <span class="material-symbols-outlined">
+                                visibility
+                            </span>
+                        </button>
+                        <button>
+                            <span class="material-symbols-outlined">
+                                delete
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="img">
+
+                </div>
+                <div class="intro">
+                    <h4>Abhishek Singh</h4>
+                    <p>Teacher</p>
+                </div>
+                <div class="subject">
+                    <span>Mathematics</span>
+                    <span>Science</span>
+                    <span>Englisg</span>
+                </div>
+                <div class="actions d-flex">
+                    <div class="left">
+                        <a href=""><span class="material-symbols-outlined">
+                                visibility
+                            </span>View Profile</a>
+                    </div>
+                    <div class="right">
+                        <button>
+                            <span class="material-symbols-outlined">
+                                visibility
+                            </span>
+                        </button>
+                        <button>
+                            <span class="material-symbols-outlined">
+                                delete
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="img">
+
+                </div>
+                <div class="intro">
+                    <h4>Abhishek Singh</h4>
+                    <p>Teacher</p>
+                </div>
+                <div class="subject">
+                    <span>Mathematics</span>
+                    <span>Science</span>
+                    <span>Englisg</span>
+                </div>
+                <div class="actions d-flex">
+                    <div class="left">
+                        <a href=""><span class="material-symbols-outlined">
+                                visibility
+                            </span>View Profile</a>
+                    </div>
+                    <div class="right">
+                        <button>
+                            <span class="material-symbols-outlined">
+                                visibility
+                            </span>
+                        </button>
+                        <button>
+                            <span class="material-symbols-outlined">
+                                delete
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {% include "CopyRight.html" %}
+
+    </div>
+</body>
+
+</html>
