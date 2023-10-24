@@ -1,0 +1,41 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="{% static 'Styles/login.css' %}">
+</head>
+
+<body>
+    <div class="container">
+        <div class="img">
+            <!-- <img src="./41Z_2106.w009.n001.5B.p8.5.jpg" alt=""> -->
+            <h3>School Management</h3>
+        </div>
+        <div class="form-container">
+            <h3>Here you can Login</h3>
+            <form action="" class="form" method="POST">
+                {% csrf_token %}
+                <div class="email-box">
+                    <label for="username">Username</label> <br>
+                    <input type="text" id="email" name="username" autofocus required>
+                </div>
+                <div class="password-box">
+                    <label for="password">Password</label> <br>
+                    <input type="password" id="password" name="password" required>
+                </div>
+
+                <button type="submit">Login</button>
+            </form>
+
+            <a href="" class="f-password">Forget password</a> <br>
+            <a href="{% url 'signup' %}" class="n-account">Create new account</a>
+        </div>
+    </div>
+</body>
+
+</html>
