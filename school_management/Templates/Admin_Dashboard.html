@@ -1,0 +1,53 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="{% static 'Styles/Admin_Dashboard.css' %}">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+</head>
+
+<body>
+    {% include "Admin_Navbar.html" %}
+
+    <div class="dashboard-container">
+        <nav class="navbar">
+            <div class="title">
+                <h4>Dashboard</h4>
+            </div>
+
+            <div class="menus">
+                <a href=""><span class="material-symbols-outlined">
+                        search
+                    </span></a>
+                <a href=""><span class="material-symbols-outlined">
+                        chat_bubble
+                    </span></a>
+                <a href=""><span class="material-symbols-outlined">
+                        notifications
+                    </span></a>
+                <a href=""><span class="material-symbols-outlined">
+                        settings
+                    </span></a>
+
+                <div class="profile">
+                    <div class="avatar">
+                        <span class="material-symbols-outlined">
+                            account_circle
+                        </span>
+                    </div>
+                    <div class="name">
+                        <p>Abhishek</p>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+</body>
+
+</html>
