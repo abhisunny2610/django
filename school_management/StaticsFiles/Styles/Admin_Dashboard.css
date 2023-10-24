@@ -1,4 +1,4 @@
-body{
+body {
     background-color: var(--main-background);
 }
 
@@ -8,26 +8,26 @@ body{
     align-items: center;
     justify-content: space-between;
 
-    > .title{
+    >.title {
         font-size: 25px;
         color: var(--primary);
     }
 
 
-    > .menus{
+    >.menus {
         display: flex;
         gap: 10px;
         align-items: center;
         /* justify-content: center; */
 
-        > a{
+        >a {
             background-color: var(--background-white);
             padding: 10px;
             border-radius: 10px;
             color: var(--grey);
         }
 
-        > .profile{
+        >.profile {
             display: flex;
             /* align-items: center; */
             justify-content: center;
@@ -36,7 +36,7 @@ body{
             border-radius: 10px;
             width: fit-content;
 
-            > .avatar{
+            >.avatar {
                 margin-right: 10px;
             }
         }
@@ -49,7 +49,7 @@ body{
     margin-right: 20px;
     margin-left: 100px;
 
-    > .total-counter{
+    >.total-counter {
         background-color: var(--white);
         margin-top: 40px;
         padding: 20px 0;
@@ -57,11 +57,11 @@ body{
         align-items: center;
         justify-content: space-evenly;
 
-        > .card{
+        >.card {
             display: flex;
             align-items: center;
 
-            > .avatar{
+            >.avatar {
                 display: flex;
                 align-items: center;
                 justify-content: center;
@@ -74,24 +74,143 @@ body{
                 height: 50px;
                 width: 50px;
 
-                > span{
+                >span {
                     font-size: 30px;
                     text-align: center;
                 }
 
             }
 
-            > .category{
-                > p{
+            >.category {
+                >p {
                     font-size: 14px;
                     color: var(--grey);
                 }
 
-                > h4{
+                >h4 {
                     font-size: 18px;
                     color: var(--primary);
                 }
             }
+        }
+    }
+
+}
+
+.search-add {
+    background-color: var(--white);
+    margin-top: 40px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    justify-content: space-between;
+
+    >.left {
+
+        >.material-symbols-outlined {
+            height: 2.5rem;
+            background-color: var(--primary);
+            color: var(--white);
+            text-align: center;
+            font-size: 30px;
+            width: 40px;
+            margin-right: 0px;
+        }
+
+        >#search-input {
+            margin-left: 0px;
+            height: 2.5rem;
+            padding: 10px;
+            border: none;
+            outline: none;
+            width: 400px;
+        }
+    }
+
+    >.right {
+        display: flex;
+        gap: 20px;
+        align-items: center;
+        justify-content: center;
+
+        >form {
+            >.sort-select {
+                position: relative;
+
+                >select {
+                    height: 2.5rem;
+                    width: 120px;
+                    outline: none;
+                    border: .5px solid var(--grey);
+                    border-radius: 5px;
+                    padding: 10px;
+                }
+
+
+            }
+
+        }
+
+        >button {
+            padding: 10px;
+            height: 2.5rem;
+            width: fit-content;
+            outline: none;
+            border: none;
+            border-radius: 5px;
+            background-color: var(--primary);
+            color: var(--white);
+        }
+    }
+}
+
+.table {
+    margin-top: 30px;
+}
+
+.student {
+    border-collapse: collapse;
+    width: 100%;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.student td,
+.student th {
+    /* border: 1px solid #ddd; */
+    padding: 8px;
+}
+
+.student tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.student tr:hover {
+    background-color: #ddd;
+}
+
+.student th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: var(--primary);
+    color: white;
+}
+
+.copy-right{
+    width: 100%;
+    margin-top: 30px;
+    background-color: var(--main-background);
+
+    > p{
+        text-align: center;
+        padding: 20px;
+        font-size: 14px;
+        color: var(--grey);
+
+        > span{
+            color: var(--primary);
         }
     }
 }
