@@ -1,6 +1,6 @@
 // get elements for popup
 
-const popupbtn = document.querySelector('#add_employee');
+const popupbtn = document.querySelector('#add_pop_button');
 
 const popup = document.querySelector('.popup-wrapper');
 
