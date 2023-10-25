@@ -9,3 +9,6 @@ def admin_student(request):
 
 def admin_teacher(request):
     return render(request, "Admin_Teacher.html")
+
+def admin_notice(request):
+    return render(request, "Admin_Notice.html")
