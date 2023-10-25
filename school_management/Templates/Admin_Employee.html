@@ -1,0 +1,110 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'Styles/Admin_Dashboard.css' %}">
+</head>
+<body>
+    {% include "Admin_Navbar.html" %}
+
+    <div class="dashboard-container">
+        {% include "Admin_uNabvar.html" %}
+
+        <div class="search-add">
+            <div class="left">
+                <span class="material-symbols-outlined">
+                    search
+                </span>
+                <input type="text" id="search-input" name="search-student" placeholder="Search Here...">
+            </div>
+            <div class="right">
+                <form action="">
+                    <div class="sort-select">
+                        <select name="sort" id="sort">
+                            <option value="latest">Latest</option>
+                            <option value="earliest">Earliest</option>
+                            <option value="ascending">Ascending</option>
+                            <option value="descending">Descending</option>
+                        </select>
+                    </div>
+                </form>
+                <button>+ Add Employee</button>
+            </div>
+        </div>
+
+        <div class="table">
+            <table class="student">
+                <tr>
+                    <th>Name</th>
+                    <th>ID</th>
+                    <th>Date</th>
+                    <th>Parent Name</th>
+                    <th>City</th>
+                    <th>Contact</th>
+                    <th>Role</th>
+                    <th>Salary</th>
+                    <th>Action</th>
+                </tr>
+                <tr>
+                    <td>Narendra Kumar</td>
+                    <td>198438</td>
+                    <td>25/10/2023</td>
+                    <td>Mohanlal Singh</td>
+                    <td>Jaipur</td>
+                    <td>8532800542</td>
+                    <td>Bus Driver</td>
+                    <td>8000</td>
+                    <td><span class="material-symbols-outlined">
+                            visibility
+                        </span>
+                        <span class="material-symbols-outlined">
+                            delete
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Narendra Kumar</td>
+                    <td>198438</td>
+                    <td>25/10/2023</td>
+                    <td>Mohanlal Singh</td>
+                    <td>Jaipur</td>
+                    <td>8532800542</td>
+                    <td>Bus Driver</td>
+                    <td>8000</td>
+                    <td><span class="material-symbols-outlined">
+                            visibility
+                        </span>
+                        <span class="material-symbols-outlined">
+                            delete
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Narendra Kumar</td>
+                    <td>198438</td>
+                    <td>25/10/2023</td>
+                    <td>Mohanlal Singh</td>
+                    <td>Jaipur</td>
+                    <td>8532800542</td>
+                    <td>Bus Driver</td>
+                    <td>8000</td>
+                    <td><span class="material-symbols-outlined">
+                            visibility
+                        </span>
+                        <span class="material-symbols-outlined">
+                            delete
+                        </span>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        {% include "CopyRight.html" %}
+
+    </div>
+</body>
+</html>
