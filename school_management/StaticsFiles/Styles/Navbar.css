@@ -58,7 +58,7 @@
             
         }
         
-        > a:nth-child(1){
+        > .active{
             padding: 10px;
             border-radius: 10px;
             background-color: var(--background-white);
