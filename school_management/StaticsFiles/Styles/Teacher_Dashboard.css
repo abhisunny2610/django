@@ -1,0 +1,84 @@
+.answers-container {
+    display: flex;
+    /* align-items: center; */
+    /* justify-content: center; */
+    flex-wrap: wrap;
+    margin: 30px 0;
+
+    >.answer-card {
+        width: 330px;
+        height: fit-content;
+        padding: 20px 10px;
+        margin: 20px 20px 20px 0;
+        box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+
+        >.ques {
+            font-weight: 600;
+        }
+
+        >.options {
+            font-size: 16px;
+            margin-top: 10px;
+        }
+
+        >.correct {
+            margin-top: 10px;
+
+            >span {
+                font-weight: bold;
+                color: green;
+            }
+        }
+
+        >.actions {
+            display: flex;
+            gap: 5px;
+            justify-content: flex-end;
+        }
+    }
+}
+
+.add-ques-container {
+    position: relative;
+    width: 80%;
+    margin: 50px;
+    /* height: fit-content; */
+    /* border: 1px solid black; */
+    
+    >form {
+        position: absolute;
+        left: 200px;
+        padding: 40px;
+        box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+        width: 50%;
+
+        > p{
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+        > label{
+            font-size: 14px;
+            margin-bottom: 2px;
+        }
+
+        >input {
+            margin-bottom: 15px;
+            height: 2.5rem;
+            width: 100%;
+            display: inline-block;
+        }
+
+        > button{
+            height: 2.5rem;
+            width: 100%;
+            background-color: var(--primary);
+            color: var(--white);
+            outline: none;
+            border: none;
+            font-size: 18px;
+            text-align: center;
+            margin-top: 10px;
+        }
+
+    }
+}

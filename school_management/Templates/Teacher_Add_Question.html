@@ -1,0 +1,43 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'Styles/Admin_Dashboard.css' %}">
+    <link rel="stylesheet" href="{% static 'Styles/Teacher_Dashboard.css' %}">
+</head>
+<body>
+    {% include "Teacher_Navbar.html" %}
+
+    <div class="dashboard-container">
+
+        {% include "Admin_uNabvar.html" %}
+
+        <div class="add-ques-container">
+            
+                <form action="">
+                    <p>Please fill the form to add question and all fields the compulsory.</p>
+                    <label for="question">Question</label>
+                    <input type="text" name="question">
+                    <label for="optionA">Option A</label>
+                    <input type="text" name="optionA">
+                    <label for="optionB">Option B</label>
+                    <input type="text" name="optionB">
+                    <label for="optionC">Option C</label>
+                    <input type="text" name="optionC">
+                    <label for="answer">Answer</label>
+                    <input type="text" name="answer">
+    
+                    <button type="submit" value="add_question">Submit</button>
+                </form>
+            
+        </div>
+
+    </div>
+    
+
+</body>
+</html>
