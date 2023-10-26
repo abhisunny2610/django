@@ -1,0 +1,52 @@
+{% load static %}
+{% load active_link_tags %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="stylesheet" href="{% static 'Styles/Navbar.css' %}">
+</head>
+
+<body>
+    <nav class="side_nav">
+        <div class="type">
+            <h4>A</h4>
+        </div>
+
+        <div class="links">
+            <a href="" class="{% active_link '' 'active' %}"
+                title="Home"><span class="material-symbols-outlined">
+                    home
+                </span></a>
+
+            <a class="{% active_link 'answer' 'active' %}" href="{% url 'answer' %}" title="Answers"><span class="material-symbols-outlined">
+                    quiz
+                </span></a>
+
+            <a class="{% active_link 'add_question' 'active' %}" href="{% url 'add_question' %}" title="Add_Question"><span class="material-symbols-outlined">
+                    contract_edit
+                </span></a>
+
+            <a class="{% active_link 'add_notice' 'active' %}" href="{% url 'add_notice' %}"
+                title="Notice Board"><span class="material-symbols-outlined">
+                    note_alt
+                </span></a>
+
+            <a class="{% active_link 'teacher_profile' 'active' %}" href="{% url 'teacher_profile' %}" title="Profile"><span class="material-symbols-outlined">
+                    account_circle
+                </span></a>
+
+            <a href="" title="Info"><span class="material-symbols-outlined">
+                    info
+                </span></a>
+        </div>
+    </nav>
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    {% include "Teacher_Navbar.html" %}
+
+    <div class="dashboard-container">
+
+        {% include "Admin_uNabvar.html" %}
+
+        <div class="search-add">
+            <div class="left">
+                <span class="material-symbols-outlined">
+                    search
+                </span>
+                <input type="text" id="search-input" name="search-student" placeholder="Search Here...">
+            </div>
+            <div class="right">
+                <form action="">
+                    <div class="sort-select">
+                        <select name="sort" id="sort">
+                            <option value="latest">Latest</option>
+                            <option value="earliest">Earliest</option>
+                            <option value="ascending">Ascending</option>
+                            <option value="descending">Descending</option>
+                        </select>
+                    </div>
+                </form>
+                <button id="add_pop_button">+ Add Student</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

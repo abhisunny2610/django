@@ -10,9 +10,47 @@
     <link rel="stylesheet" href="{% static 'Styles/Teacher_Dashboard.css' %}">
 </head>
 <body>
-    <div class="admin-container">
+    {% include "Teacher_Navbar.html" %}
+    <div class="dashboard-container">
+        {% include "Admin_uNabvar.html" %}
 
-        {% include "Admin_Navbar.html" %}
+        <div class="total-counter">
+            <div class="card">
+                <div class="avatar">
+                    <span class="material-symbols-outlined">
+                        school
+                    </span>
+                </div>
+                <div class="category">
+                    <p>Student</p>
+                    <h4>932</h4>
+                </div>
+            </div>
+            <div class="card">
+                <div class="avatar">
+                    <span class="material-symbols-outlined">
+                        person
+                        </span>
+                </div>
+                <div class="category">
+                    <p>Teacher</p>
+                    <h4>932</h4>
+                </div>
+            </div>
+            <div class="card">
+                <div class="avatar">
+                    <span class="material-symbols-outlined">
+                        note_alt
+                        </span>
+                </div>
+                <div class="category">
+                    <p>Notes</p>
+                    <h4>932</h4>
+                </div>
+            </div>
+        </div>
+
+        {% include "Student_Table.html" %}
 
     </div>
 </body>
