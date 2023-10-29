@@ -488,10 +488,11 @@ button:hover {
     top: 0;
     left: 0;
     height: 100%;
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.6);
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.6);
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    
+
     >.popup {
         position: absolute;
         right: 350px;
@@ -499,7 +500,7 @@ button:hover {
         width: 40%;
         background-color: var(--white);
 
-        > .popup-close{
+        >.popup-close {
             position: relative;
             text-align: right;
             font-size: 25px;
@@ -510,7 +511,7 @@ button:hover {
 
         >.popup-content {
 
-            > h4{
+            >h4 {
                 text-align: center;
                 font-size: 18px;
                 color: var(--primary);
@@ -521,7 +522,7 @@ button:hover {
 
                 margin-top: 20px;
 
-                > label{
+                >label {
                     font-size: 14px;
                     margin-bottom: 0;
                     margin-left: 5px;
@@ -540,13 +541,15 @@ button:hover {
                     border-radius: 4px;
                     box-sizing: border-box;
                     outline: none;
+                    padding:0px 10px;
                 }
-                > input:focus {
+
+                >input:focus {
                     border-color: var(--secondary);
                     box-shadow: 0 0 0 0.2rem #fb7e5b44;
                 }
 
-                > button{
+                >button {
                     margin-top: 10px;
                     display: inline-block;
                     width: 100%;
@@ -565,6 +568,32 @@ button:hover {
 
 }
 
-.popup-wrapper::-webkit-scrollbar{
+/* Add Zoom Animation */
+.animate {
+    -webkit-animation: animatezoom 0.6s;
+    animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+    from {
+        -webkit-transform: scale(0)
+    }
+
+    to {
+        -webkit-transform: scale(1)
+    }
+}
+
+@keyframes animatezoom {
+    from {
+        transform: scale(0)
+    }
+
+    to {
+        transform: scale(1)
+    }
+}
+
+.popup-wrapper::-webkit-scrollbar {
     width: 0px;
 }

@@ -2,12 +2,14 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="{% static 'Styles/Admin_Dashboard.css' %}">
 </head>
+
 <body>
     {% include "Admin_Navbar.html" %}
 
@@ -36,38 +38,7 @@
             </div>
         </div>
 
-        <div class="popup-wrapper">
-
-            <div class="popup">
-
-                <div class="popup-close">X</div>
-
-                <div class="popup-content">
-                    <h4>FILL THE FORM TO ADD NEW EMPLOYEE</h4>
-
-                  <form action="" method="POST">
-                    <label for="name">Name</label> 
-                    <input type="text" name="name"> 
-                    <label for="parent-name">Parent Name</label> 
-                    <input type="text" name="parent-name"> 
-                    <label for="contact">Contact</label>
-                    <input type="tel" name="contact" pattern="[6-9]{1}[0-9]{9}">
-                    <label for="city">City</label>
-                    <input type="text" name="city">
-                    <label for="role">Role</label>
-                    <input type="text" name="role">
-                    <label for="salary">Salary</label>
-                    <input type="text" name="salary">
-
-                    <button type="submit" value="add">Submit</button>
-
-                  </form>
-
-                </div>
-
-            </div>
-
-        </div>
+        {% include "Registration_Form/Employee.html" %}
 
         <div class="table">
             <table class="student">
@@ -142,4 +113,5 @@
 
     <script src="{% static 'JavaScript/FormPop.js' %}"></script>
 </body>
+
 </html>
