@@ -1,0 +1,122 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --primary: #5a4bda;
+    --secondary: #FB7D5B;
+    --white: rgb(242, 242, 242);
+    --background-white: rgba(202, 200, 200, 0.304);
+    --main-background : rgba(0, 0, 0, 0.018);
+    --grey: #8e8b92;
+}
+
+
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 30px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+
+    > .logo{
+
+        > h4{
+            font-size: 30px;
+            font-weight: bold;
+        }
+    }
+
+    >.actions{
+        display: flex;
+        align-items: center;
+        gap: 20px;
+
+        > .profile{
+            display: flex;
+            align-items: center;
+            gap: 5px;
+
+            > span{
+                font-size: 30px;
+            }
+
+            > p{
+                font-size: 18px;
+            }
+        }
+
+        > button{
+
+            > a{
+                text-decoration: none;
+                color: white;
+                font-size: 16px;
+            }
+            /* height: 1.5rem; */
+            background-color: red;
+            border: none;
+            outline: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+
+        > button:active{
+            background-color: rgb(171, 0, 0);
+        }
+    }
+}
+
+.body-container{
+    margin: 50px;
+    
+    > h1{
+        color: var(--primary);
+        margin-bottom: 20px;
+        padding-bottom: 10px;
+        border-bottom: 2px solid var(--grey);
+    }
+    > .questions{
+        margin-top: 30px;
+
+        > p{
+            font-size: 18px;
+            color: rgb(77, 77, 77);
+            margin: 20px 0px 10px 0px;
+        }
+
+        > .options{
+            margin-left: 10px;
+
+            > label{
+                font-size: 18px;
+                color: var(--grey);
+            }
+
+            > input{
+                margin-bottom: 15px;
+                font-size: 20px;
+            }
+
+        }
+
+        > button{
+            /* height: 1.5rem; */
+            padding: 10px 10px;
+            font-size: 18px;
+            width: 200px;
+            background-color: var(--primary);
+            color: white;
+            outline: none;
+            border: none;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+
+        > button:active{
+            background-color: #3626c9;
+        }
+    }
+}

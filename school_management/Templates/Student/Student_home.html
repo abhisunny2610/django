@@ -1,0 +1,53 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="stylesheet" href="{% static 'Styles/Student_style.css' %}">
+</head>
+
+<body>
+    {% include "Student/Student_navbar.html" %}
+    <div class="body-container">
+        <h1>Web Development Quiz</h1>
+        <div class="questions">
+            <p class="ques">1. The decimal range of network address for class B network is between</p>
+            <div class="options">
+                <input type="radio" id="option" name="answer">
+                <label for="option">127-190</label><br>
+                <input type="radio" id="option" name="answer">
+                <label for="option">128-190</label><br>
+                <input type="radio" id="option" name="answer">
+                <label for="option">128-191</label>
+            </div>
+            <p class="ques">2. The decimal range of network address for class B network is between</p>
+            <div class="options">
+                <input type="radio" id="option" name="answer">
+                <label for="option">127-190</label><br>
+                <input type="radio" id="option" name="answer">
+                <label for="option">128-190</label><br>
+                <input type="radio" id="option" name="answer">
+                <label for="option">128-191</label>
+            </div>
+            <p class="ques">3. The decimal range of network address for class B network is between</p>
+            <div class="options">
+                <input type="radio" id="option" name="answer">
+                <label for="option">127-190</label><br>
+                <input type="radio" id="option" name="answer">
+                <label for="option">128-190</label><br>
+                <input type="radio" id="option" name="answer">
+                <label for="option">128-191</label>
+            </div>
+
+            <button>Submit</button>
+        </div>
+    </div>
+</body>
+
+</html>
