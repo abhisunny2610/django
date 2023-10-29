@@ -530,7 +530,8 @@ button:hover {
                 }
 
                 >input[type=text],
-                input[type=tel] {
+                input[type=tel]
+                {
                     width: 100%;
                     /* padding: 12px 20px; */
                     margin: 0px 0;

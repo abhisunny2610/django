@@ -39,38 +39,7 @@
             </div>
         </div>
 
-        <div class="popup-wrapper">
-
-            <div class="popup">
-
-                <div class="popup-close">X</div>
-
-                <div class="popup-content">
-                    <h4>FILL THE FORM TO ADD NEW EMPLOYEE</h4>
-
-                  <form action="" method="POST">
-                    <label for="name">Name</label> 
-                    <input type="text" name="name"> 
-                    <label for="parent-name">Parent Name</label> 
-                    <input type="text" name="parent-name"> 
-                    <label for="contact">Contact</label>
-                    <input type="tel" name="contact" pattern="[6-9]{1}[0-9]{9}">
-                    <label for="city">City</label>
-                    <input type="text" name="city">
-                    <label for="role">Role</label>
-                    <input type="text" name="role">
-                    <label for="salary">Salary</label>
-                    <input type="text" name="salary">
-
-                    <button type="submit" value="add">Submit</button>
-
-                  </form>
-
-                </div>
-
-            </div>
-
-        </div>
+        {% include "Registration_Form/Teacher.html" %}
 
         <div class="teachers-card">
             <div class="card">
@@ -93,45 +62,12 @@
                             </span>View Profile</a>
                     </div>
                     <div class="right">
-                        <button>
+                        <button title="Update">
                             <span class="material-symbols-outlined">
-                                visibility
+                                edit_note
                             </span>
                         </button>
-                        <button>
-                            <span class="material-symbols-outlined">
-                                delete
-                            </span>
-                        </button>
-                    </div>
-                </div>
-            </div>
-            <div class="card">
-                <div class="img">
-
-                </div>
-                <div class="intro">
-                    <h4>Abhishek Singh</h4>
-                    <p>Teacher</p>
-                </div>
-                <div class="subject">
-                    <span>Mathematics</span>
-                    <span>Science</span>
-                    <span>Englisg</span>
-                </div>
-                <div class="actions d-flex">
-                    <div class="left">
-                        <a href=""><span class="material-symbols-outlined">
-                                visibility
-                            </span>View Profile</a>
-                    </div>
-                    <div class="right">
-                        <button>
-                            <span class="material-symbols-outlined">
-                                visibility
-                            </span>
-                        </button>
-                        <button>
+                        <button title="Delete">
                             <span class="material-symbols-outlined">
                                 delete
                             </span>
@@ -159,45 +95,12 @@
                             </span>View Profile</a>
                     </div>
                     <div class="right">
-                        <button>
+                        <button title="Update">
                             <span class="material-symbols-outlined">
-                                visibility
+                                edit_note
                             </span>
                         </button>
-                        <button>
-                            <span class="material-symbols-outlined">
-                                delete
-                            </span>
-                        </button>
-                    </div>
-                </div>
-            </div>
-            <div class="card">
-                <div class="img">
-
-                </div>
-                <div class="intro">
-                    <h4>Abhishek Singh</h4>
-                    <p>Teacher</p>
-                </div>
-                <div class="subject">
-                    <span>Mathematics</span>
-                    <span>Science</span>
-                    <span>Englisg</span>
-                </div>
-                <div class="actions d-flex">
-                    <div class="left">
-                        <a href=""><span class="material-symbols-outlined">
-                                visibility
-                            </span>View Profile</a>
-                    </div>
-                    <div class="right">
-                        <button>
-                            <span class="material-symbols-outlined">
-                                visibility
-                            </span>
-                        </button>
-                        <button>
+                        <button title="Delete">
                             <span class="material-symbols-outlined">
                                 delete
                             </span>
@@ -225,12 +128,78 @@
                             </span>View Profile</a>
                     </div>
                     <div class="right">
-                        <button>
+                        <button title="Update">
                             <span class="material-symbols-outlined">
-                                visibility
+                                edit_note
                             </span>
                         </button>
-                        <button>
+                        <button title="Delete">
+                            <span class="material-symbols-outlined">
+                                delete
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="img">
+
+                </div>
+                <div class="intro">
+                    <h4>Abhishek Singh</h4>
+                    <p>Teacher</p>
+                </div>
+                <div class="subject">
+                    <span>Mathematics</span>
+                    <span>Science</span>
+                    <span>Englisg</span>
+                </div>
+                <div class="actions d-flex">
+                    <div class="left">
+                        <a href=""><span class="material-symbols-outlined">
+                                visibility
+                            </span>View Profile</a>
+                    </div>
+                    <div class="right">
+                        <button title="Update">
+                            <span class="material-symbols-outlined">
+                                edit_note
+                            </span>
+                        </button>
+                        <button title="Delete">
+                            <span class="material-symbols-outlined">
+                                delete
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="img">
+
+                </div>
+                <div class="intro">
+                    <h4>Abhishek Singh</h4>
+                    <p>Teacher</p>
+                </div>
+                <div class="subject">
+                    <span>Mathematics</span>
+                    <span>Science</span>
+                    <span>Englisg</span>
+                </div>
+                <div class="actions d-flex">
+                    <div class="left">
+                        <a href=""><span class="material-symbols-outlined">
+                                visibility
+                            </span>View Profile</a>
+                    </div>
+                    <div class="right">
+                        <button title="Update">
+                            <span class="material-symbols-outlined">
+                                edit_note
+                            </span>
+                        </button>
+                        <button title="Delete">
                             <span class="material-symbols-outlined">
                                 delete
                             </span>
