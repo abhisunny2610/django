@@ -1,17 +1,17 @@
-{% load static %}
+{% extends "index.html" %}
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Practice Website</title>
-    <link rel="stylesheet" href="{% static 'Style/Navbar.css' %}">
-</head>
-<body>
-    {% include "Navbar.html" %}
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus culpa sit exercitationem adipisci consequuntur asperiores deleniti dolorum itaque minima inventore modi facilis neque officiis ullam unde, temporibus nemo dolores quae? Lorem ipsum dolor sit amet consectetur, adipisicing elit. Totam in aperiam vitae perspiciatis quaerat ut error nihil quia cumque! Molestias ea aspernatur quae quam sed perspiciatis voluptas excepturi nesciunt velit! Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias, ipsa quam itaque ducimus id consectetur eligendi nobis necessitatibus dignissimos sed, assumenda aliquam consequatur explicabo quas inventore iure maiores eaque libero! Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate accusamus minus fuga suscipit necessitatibus voluptates, qui laboriosam commodi tempore omnis dolore tenetur nihil nisi quas tempora placeat minima repellat animi? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint optio fugiat error ad eius sit perferendis explicabo inventore numquam ut animi, quibusdam, vero non quaerat. Odio magni omnis pariatur qui.</p>
+{% block heading %}
+<h1>This is Home page</h1>
+<div class="mb-3">
+  <label for="exampleFormControlInput1" class="form-label">Enter Name</label>
+  <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="xyzname">
 
-    {% include "Footer.html" %}
-</body>
-</html>
+  <div class="mb-3">
+    <label for="formFile" class="form-label">Default file input example</label>
+    <input class="form-control" type="file" id="formFile">
+  </div>
+</div>
+{% endblock %}
+
+
+

@@ -1,14 +1,5 @@
-{% load static %}
+{% extends "index.html" %}
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="{% static 'Style/Navbar.css' %}">
-</head>
-<body>
-    {% include "Navbar.html" %}
-</body>
-</html>
+{% block heading %}
+  <h1>This is About Page.</h1>
+{% endblock  %}

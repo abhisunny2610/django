@@ -14,41 +14,28 @@
     <div class="dashboard-container">
         {% include "Admin_uNabvar.html" %}
 
-        <div class="total-counter">
-            <div class="card">
-                <div class="avatar">
-                    <span class="material-symbols-outlined">
-                        school
-                    </span>
-                </div>
-                <div class="category">
-                    <p>Student</p>
-                    <h4>932</h4>
-                </div>
+        <div class="search-add">
+            <div class="left">
+                <span class="material-symbols-outlined">
+                    search
+                </span>
+                <input type="text" id="search-input" name="search-student" placeholder="Search Here...">
             </div>
-            <div class="card">
-                <div class="avatar">
-                    <span class="material-symbols-outlined">
-                        person
-                        </span>
-                </div>
-                <div class="category">
-                    <p>Teacher</p>
-                    <h4>932</h4>
-                </div>
-            </div>
-            <div class="card">
-                <div class="avatar">
-                    <span class="material-symbols-outlined">
-                        note_alt
-                        </span>
-                </div>
-                <div class="category">
-                    <p>Notes</p>
-                    <h4>932</h4>
-                </div>
+            <div class="right">
+                <form action="">
+                    <div class="sort-select">
+                        <select name="sort" id="sort">
+                            <option value="latest">Latest</option>
+                            <option value="earliest">Earliest</option>
+                            <option value="ascending">Ascending</option>
+                            <option value="descending">Descending</option>
+                        </select>
+                    </div>
+                </form>
+                <button id="add_pop_button">+ Add Student</button>
             </div>
         </div>
+        {% include "Registration_Form/Student.html" %}
 
         {% include "Student_Table.html" %}
 
