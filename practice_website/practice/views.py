@@ -4,15 +4,6 @@ from .models import Images
 
 # Create your views here.
 def home(request):
-    return render(request, "Home.html", )
-
-def about(request):
-    return render(request, "About.html")
-
-def gallery(request):
-    return render(request, "Gallery.html")
-
-def add_user(request):
     if request.method == "GET":
         return render(request, "Home.html")
     
@@ -22,4 +13,10 @@ def add_user(request):
 
         images = Images()
         images.insertDeatils(name, image)
-        return redirect("Home.html")
+    return redirect("home")
+
+def about(request):
+    return render(request, "About.html")
+
+def gallery(request):
+    return render(request, "Gallery.html")
