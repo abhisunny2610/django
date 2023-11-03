@@ -15,8 +15,8 @@
         <div class="form">
             <form action="" method="post" enctype="multipart/form-data">
                 {% csrf_token %}
-                <input type="text" placeholder="Enter Image Name" name="img_name">
-                <input type="file" name="img">
+                <input type="text" placeholder="Enter Image Name" name="img_name" required>
+                <input type="file" name="img" required>
                 <button type="submit">Submit</button>
             </form>
         </div>
