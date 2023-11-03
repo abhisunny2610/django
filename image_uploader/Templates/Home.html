@@ -1,0 +1,32 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Uploader</title>
+    <link rel="stylesheet" href="{% static 'Styles/Home.css' %}">
+
+</head>
+<body>
+    <div class="main-container">
+        <h1>Image Uploader Project</h1>
+        <div class="form">
+            <form action="" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <input type="text" placeholder="Enter Image Name" name="img_name">
+                <input type="file" name="img">
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+
+        <div class="display-container">
+            {% for image in images %}
+                <h3>{{image.name}}</h3>
+                <img src="{{image.image.url}}" alt="">
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>
