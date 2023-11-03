@@ -23,8 +23,10 @@
 
         <div class="display-container">
             {% for image in images %}
-                <h3>{{image.name}}</h3>
-                <img src="{{image.image.url}}" alt="">
+                <div class="card">
+                    <img src="{{image.image.url}}" alt="">
+                    <h3>{{image.name}}</h3>
+                </div>
             {% endfor %}
         </div>
     </div>

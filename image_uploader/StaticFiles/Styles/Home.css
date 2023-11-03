@@ -6,31 +6,42 @@
 
 .main-container{
     margin: 0px 50px;
-    padding: 20px 0px;
+    padding: 0px 0px;
 
     > h1{
         font-size: 30px;
         margin-bottom: 30px;
         text-align: center;
+        background-color: rgb(247, 176, 90);
+        padding: 10px;
     }
 
     > .form{
-        /* width: 400px; */
+        width: 800px;
         height: fit-content;
         padding: 40px;
         margin-bottom: 30px;
+        position: relative;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        right: -150px;
 
         > form{
             /* display: flex; */
             /* flex-direction: column; */
 
-            > input{
+            > input[type="text"]{
                 margin-bottom: 1rem;
                 height: 2.5rem;
                 padding: 10px;
                 width: 50%;
-                font-size: 16px;
+                font-size: 16px;    
+                margin-right: 10px;
+            }
 
+            > input[type="file"]::-webkit-file-upload-button{
+                width: 40%;
+                height: 2.5rem;
+                font-size: 16px;
             }
 
             > button{
@@ -38,13 +49,37 @@
                 height: 2.5rem;
                 padding: 10px;
                 width: 100%;
-                background-color: bisque;
+                background-color: rgb(254, 207, 149);
                 border: none;
                 outline: none;
             }
 
             > button:active{
-                background-color: rgb(245, 197, 138);
+                background-color: rgb(255, 181, 90);
+            }
+        }
+    }
+
+    > .display-container{
+        display: flex;
+        flex-wrap: wrap;
+
+        > .card{
+            margin: 10px;
+            height: fit-content;
+            padding: 10px;
+            border: 2px solid black;
+
+            > h3{
+                font-size: 22px;
+                margin-top: 10px;
+                text-align: center;
+            }
+
+            > img{
+                width: 320px;
+                height: 250px;
+        
             }
         }
     }
