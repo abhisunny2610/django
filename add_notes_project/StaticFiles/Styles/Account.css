@@ -2,7 +2,11 @@
     box-sizing: border-box;
 }
 
-.login-container{
+body{
+    height: 100vh;
+}
+
+.login{
     background-image: url("/StaticFiles/Images/Login_background.jpg");
     background-repeat: no-repeat;
     background-size: cover;
