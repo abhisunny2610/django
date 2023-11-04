@@ -118,8 +118,8 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
-STATICFILES_DIR = [
-    'static/'
+STATICFILES_DIRS = [
+    'StaticFiles/'
 ]
 
 # Default primary key field type

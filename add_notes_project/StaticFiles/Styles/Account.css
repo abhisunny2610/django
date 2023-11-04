@@ -1,0 +1,10 @@
+*{
+    box-sizing: border-box;
+}
+
+.login-container{
+    background-image: url("/StaticFiles/Images/Login_background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
