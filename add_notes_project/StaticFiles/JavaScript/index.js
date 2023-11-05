@@ -8,7 +8,7 @@ const popupclose = document.querySelector('.popup-close');
 
 // popup
 
-popupbtn.addEventListener('click',() =>{
+popupbtn.addEventListener('click', () => {
 
     popup.style.display = "block";
 
@@ -23,9 +23,9 @@ popupclose.addEventListener('click', () => {
 
 popup.addEventListener('click', (e) => {
 
-    if(e.target.className === 'popup-wrapper'){
+    if (e.target.className === 'popup-wrapper') {
 
-      popup.style.display = 'none';
+        popup.style.display = 'none';
 
     }
 

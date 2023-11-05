@@ -10,14 +10,16 @@
         <div class="card-footer d-flex align-items-end justify-content-between">
             <p class="text-secondary">{{note.date}}</p>
             <div class="action">
-                <button class="btn btn-sm btn-warning" id="update_button"><span class="material-symbols-outlined"
-                        style="font-size: 18px;">
-                        edit_note
-                    </span></button>
-                <button class="btn btn-sm btn-danger" id="delete_button"><span class="material-symbols-outlined"
-                        style="font-size: 18px;">
-                        delete
-                    </span></button>
+                <button class="btn btn-sm btn-warning" id="update_button"><a href="{% url 'update' note.id %}"
+                        class="text-decoration-none text-light"><span class="material-symbols-outlined"
+                            style="font-size: 18px;">
+                            edit_note
+                        </span></a></button>
+                <button class="btn btn-sm btn-danger" id="delete_button"><a href="{% url 'delete' note.id %}"
+                        class="text-decoration-none text-light"><span class="material-symbols-outlined"
+                            style="font-size: 18px;">
+                            delete
+                        </span></a></button>
             </div>
         </div>
     </div>
