@@ -1,22 +1,25 @@
-<div class="container border p-4 mt-5">
+<div class="container border p-4 mt-5 d-flex flex-wrap gap-4">
+    {% for note in notes %}
     <div class="card" style="width: 18rem;">
         <div class="card-header">
-            <h5 class="card-title">Card title</h5>
+            <h5 class="card-title">{{note.title}}</h5>
         </div>
         <div class="card-body">
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-                content.</p>
+            <p class="card-text">{{note.description}}</p>
         </div>
         <div class="card-footer d-flex align-items-end justify-content-between">
-            <p class="text-secondary">12/12/2023</p>
+            <p class="text-secondary">{{note.date}}</p>
             <div class="action">
-                <button class="btn btn-sm btn-warning" id="update_button"><span class="material-symbols-outlined"  style="font-size: 18px;">
+                <button class="btn btn-sm btn-warning" id="update_button"><span class="material-symbols-outlined"
+                        style="font-size: 18px;">
                         edit_note
                     </span></button>
-                <button class="btn btn-sm btn-danger" id="delete_button"><span class="material-symbols-outlined" style="font-size: 18px;">
+                <button class="btn btn-sm btn-danger" id="delete_button"><span class="material-symbols-outlined"
+                        style="font-size: 18px;">
                         delete
                     </span></button>
             </div>
         </div>
     </div>
+    {% endfor %}
 </div>

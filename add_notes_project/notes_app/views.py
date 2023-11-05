@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib import auth
 from django.contrib.auth.models import User, Permission
 from django.http import HttpResponse
+from .models import Notes
 
 # Create your views here.
 
@@ -45,8 +46,11 @@ def signup(request):
 
 #-------------------------------------------------------------------------------------------------
 def home(request):
-    return render(request, "Pages/Home.html")
-
+    if request.user.is_authenticated:
+        notes = Notes.objects.filter(user_id= request.user.id)
+        return render(request, "Pages/Home.html", {"notes":notes})
+    else:
+        return redirect("login")
 
 #-------------------------------------------------------------------------------------------------
 def logout(request):
@@ -58,4 +62,18 @@ def logout(request):
 
 #-------------------------------------------------------------------------------------------------
 def addnote(request):
-    pass
+    if request.method == "GET":
+        return render(request, "Home.html")
+    
+    if request.method == "POST" and request.user.is_authenticated:
+        title = request.POST.get("title")
+        description = request.POST.get("description")
+
+        notes = Notes()
+        notes.title = title
+        notes.description = description
+        notes.user = request.user
+        notes.save()
+
+        return redirect("home")
+
