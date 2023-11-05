@@ -17,3 +17,7 @@ body{
 textarea{
     resize: none;
 }
+
+#exampleModal{
+    display: none;
+}
