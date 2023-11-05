@@ -12,3 +12,8 @@ body{
     background-size: cover;
     background-position: center;
 }
+
+
+textarea{
+    resize: none;
+}
