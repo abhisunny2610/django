@@ -1,28 +1,30 @@
 {% extends "Pages/index.html" %}
 
 {% block content %}
-<div class="login h-100 d-flex align-items-center justify-content-center">
-    <div class="col-4 shadow p-4">
-        <form action="" method="post">
-            {% csrf_token %}
-            <legend class="text-center mb-4">Login Here...</legend>
-            <div class="mb-3">
-                <!-- <label for="username" class="form-label">User name</label> -->
-                <input type="text" class="form-control" id="username" aria-describedby="userHelp" placeholder="username"
-                    required>
-                <div id="userHelp" class="form-text">We'll never share your username with anyone else.</div>
-            </div>
-            <div class="mb-3">
-                <!-- <label for="password" class="form-label">Password</label> -->
-                <input type="password" class="form-control" id="password" placeholder="password" required>
-            </div>
-            <button type="submit" class="btn btn-primary w-100">Login</button>
-        </form>
-
-        <p class="mt-4 mb-0 text-center fw-bold"><a href="{% url 'signup' %}"
-                class="text-dark text-decoration-none">Create new Account</a></p>
-
+<div style="height: 100vh;">
+    <div class="login h-100 d-flex align-items-center justify-content-center">
+        <div class="col-4 shadow p-4">
+            <form action="" method="post">
+                {% csrf_token %}
+                <legend class="text-center mb-4">Login Here...</legend>
+                <div class="mb-3">
+                    <!-- <label for="username" class="form-label">User name</label> -->
+                    <input type="text" class="form-control" id="username" aria-describedby="userHelp" placeholder="username"
+                        required>
+                    <div id="userHelp" class="form-text">We'll never share your username with anyone else.</div>
+                </div>
+                <div class="mb-3">
+                    <!-- <label for="password" class="form-label">Password</label> -->
+                    <input type="password" class="form-control" id="password" placeholder="password" required>
+                </div>
+                <button type="submit" class="btn btn-primary w-100">Login</button>
+            </form>
+    
+            <p class="mt-4 mb-0 text-center fw-bold"><a href="{% url 'signup' %}"
+                    class="text-dark text-decoration-none">Create new Account</a></p>
+    
+        </div>
     </div>
+    
 </div>
-
 {% endblock %}

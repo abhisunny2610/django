@@ -1,0 +1,34 @@
+{% extends "Pages/index.html" %}
+
+{% block content %}
+
+<div style="height: 100vh;">
+    <div class="h-100 d-flex justify-content-center align-items-center">
+        <div class="shadow col-4 p-4">
+            <form action="" method="post" autocomplete="off">
+                {% csrf_token %}
+                <legend class="text-center mb-4">Register Here...</legend>
+                <div class="mb-3">
+                    <!-- <label for="username" class="form-label">User name</label> -->
+                    <input type="email" class="form-control" name="email" placeholder="email" autofocus required>
+                </div>
+                <div class="mb-3">
+                    <!-- <label for="username" class="form-label">User name</label> -->
+                    <input type="text" class="form-control" name="username" placeholder="username" required>
+                </div>
+                <div class="mb-3">
+                    <!-- <label for="username" class="form-label">User name</label> -->
+                    <input type="password" class="form-control" name="password" placeholder="password" required>
+                </div>
+                <div class="mb-3">
+                    <!-- <label for="username" class="form-label">User name</label> -->
+                    <input type="password" class="form-control" name="cpassword" placeholder="confirm password"
+                        required>
+                </div>
+                <button type="submit" class="btn btn-primary w-100">Register</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
