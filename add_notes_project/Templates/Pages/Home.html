@@ -16,7 +16,7 @@
                     name="Title" autofocus>
             </div>
             <div class="mb-3">
-                <textarea class="form-control" placeholder="Description" id="floatingTextarea" rows=3></textarea>
+                <textarea name="description" class="form-control" placeholder="Description" id="floatingTextarea" rows=3></textarea>
             </div>
             <button class="btn btn-primary w-100">ADD</button>
         </form>
@@ -24,6 +24,7 @@
 </section>
 
 <section>
+    {% include "Pages/Update_Popup.html" %}
     {% include "Pages/display_notes.html" %}
 </section>
 

@@ -1,5 +1,32 @@
-modal = document.getElementById("exampleModal")
+// get elements for popup
 
-document.getElementById("delete_button").addEventListener("click", ()=>{
-    modal.style.display = "block"
-})
+const popupbtn = document.querySelector('#update_button');
+
+const popup = document.querySelector('.popup-wrapper');
+
+const popupclose = document.querySelector('.popup-close');
+
+// popup
+
+popupbtn.addEventListener('click',() =>{
+
+    popup.style.display = "block";
+
+
+});
+
+popupclose.addEventListener('click', () => {
+
+    popup.style.display = 'none';
+
+});
+
+popup.addEventListener('click', (e) => {
+
+    if(e.target.className === 'popup-wrapper'){
+
+      popup.style.display = 'none';
+
+    }
+
+});
