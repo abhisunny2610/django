@@ -4,7 +4,7 @@
 <div style="height: 100vh;">
     <div class="login h-100 d-flex align-items-center justify-content-center">
         <div class="col-4 shadow p-4">
-            <form action="" method="post">
+            <form action="{% url 'login' %}" method="post">
                 {% csrf_token %}
                 <legend class="text-center mb-4">Login Here...</legend>
                 <div class="mb-3">

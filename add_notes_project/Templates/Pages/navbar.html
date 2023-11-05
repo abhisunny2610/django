@@ -22,8 +22,10 @@
                 <span class="material-symbols-outlined">
                     account_circle
                 </span>
-                <p class="fs-6 mt-3 ms-1">Abhishek</p>
-                <button class="btn btn-sm btn-danger ms-3"><a href="" class="text-decoration-none text-light">Logout</a></button>
+                {% if request.user.is_authenticated %}
+                <p class="fs-6 mt-3 ms-1">{{request.user.username}}</p>
+                <button class="btn btn-sm btn-danger ms-3"><a href="{% url 'logout' %}" class="text-decoration-none text-light">Logout</a></button>
+                {% endif %}
             </div>
         </div>
     </div>

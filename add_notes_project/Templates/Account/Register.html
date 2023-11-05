@@ -5,7 +5,7 @@
 <div style="height: 100vh;">
     <div class="h-100 d-flex justify-content-center align-items-center">
         <div class="shadow col-4 p-4">
-            <form action="" method="post" autocomplete="off">
+            <form action=" {% url 'signup' %}" method="post" autocomplete="off">
                 {% csrf_token %}
                 <legend class="text-center mb-4">Register Here...</legend>
                 <div class="mb-3">

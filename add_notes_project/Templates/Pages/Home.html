@@ -7,13 +7,13 @@
 
 <section class="mt-5">
     <div class="d-flex justify-content-center align-items-center">
-        <form action="" method="post" class="col-5 shadow p-4">
+        <form action=" {% url 'addnote' %}" method="post" class="col-5 shadow p-4">
             {% csrf_token %}
             <legend class="text-center mb-4">Add New Note</legend>
             <div class="mb-3">
 
-                <input type="text" class="form-control" id="username" aria-describedby="userHelp" placeholder="title"
-                    name="Title" autofocus>
+                <input type="text" class="form-control" id="username" aria-describedby="userHelp" placeholder="Title"
+                    name="title" autofocus>
             </div>
             <div class="mb-3">
                 <textarea name="description" class="form-control" placeholder="Description" id="floatingTextarea" rows=3></textarea>
