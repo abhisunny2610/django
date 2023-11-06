@@ -1,19 +1,25 @@
+{% extends "Pages/index.html" %}
+
+{% block content %}
 <div class="popup-wrapper" style="height: 100vh;">
     <div class="d-flex justify-content-center align-items-center h-100">
-        <div class="popup animate bg-light p-4 col-5">
-            <div class="popup-close text-end fs-4">X</div>
+        <div class="popup animate shadow border bg-light p-4 col-5">
+            <p class="text-end"><a href="{% url 'home' %}" class="text-decoration-none fs-4 text-dark">X</a></p>
             <form action="" method="post">
+                {% csrf_token %}
                 <legend class="text-center mb-4">Update Note</legend>
                 <div class="mb-3">
                     <input type="text" class="form-control" id="username" aria-describedby="userHelp"
                         placeholder="Title" name="title" value="{{note.title}}">
                 </div>
                 <div class="mb-3">
-                    <textarea class="form-control" value="{{note.description}}" name="description"
-                        placeholder="Description" id="floatingTextarea" rows=3></textarea>
+                    <input type="text" class="form-control" value="{{note.description}}" name="description"
+                        placeholder="Description" id="desc">
                 </div>
                 <button class="btn btn-primary w-100" type="submit">Update</button>
             </form>
         </div>
     </div>
-</div> 
+</div>
+{% endblock  %}
+

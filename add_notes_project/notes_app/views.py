@@ -93,7 +93,7 @@ def delete(request, id):
 def update(request, id):
     if request.method == "GET":
         note = Notes.objects.get(pk=id)
-        return render(request, "Pages/Home.html", {"note": note})
+        return render(request, "Pages/Update_Popup.html", {"note": note})
 
     if request.method == "POST" and request.user.is_authenticated:
         title = request.POST.get("title")
