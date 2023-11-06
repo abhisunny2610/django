@@ -1,5 +1,5 @@
 from django.db import models
-
+from django.contrib.auth.models import User
 # Create your models here.
 class Teacher(models.Model):
     Name = models.CharField(max_length=30, default="")
@@ -12,17 +12,37 @@ class Teacher(models.Model):
     Performance = models.CharField(default="", max_length=10, null=True)
     Image = models.ImageField(upload_to='Image', blank=True, null=True)
     Registered = models.DateField(auto_now_add=True)
+    userAccount = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
 
-    def register_student(self, Name, Subject, Qualification,Salary, Performance, City, Contact, Dob, Image, Registered):
-        self.Name = Name
-        self.Subject = Subject
-        self.Qualification = Qualification
-        self.Salary = Salary
-        self.Performance = Performance
-        self.City = City
-        self.Contact = Contact
-        self.Dob = Dob
-        self.Image = Image
-        self.Registered = Registered
+    def regitster_teacher(self, data, userAccount):
+        self.Name = data.get("name")
+        self.Subject = data.get("subject")
+        self.Qualification = data.get("qualification")
+        self.Salary = data.get("salary")
+        self.Contact = data.get("contact")
+        self.Dob = data.get("dob")
+        
 
+        self.userAccount = userAccount
+        # first save the user account
+        self.userAccount.save()
+
+        # then save the account.
         self.save()
+
+
+
+    def generate_user_details(self, data):
+
+        userName = data.get("name")
+        userdob = data.get("dob")
+
+        if len(userName) == 0:
+            return False
+        
+        if len(userdob) == 0:
+            return False
+        
+        # generating the password.
+        userdob_ = "".join(userdob.split('-'))
+        return (userName, userName.upper() + "@" + userdob_)

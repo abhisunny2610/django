@@ -1,4 +1,6 @@
 from django.shortcuts import render
+from teacher.models import Teacher
+from django.contrib.auth.models import User
 
 # Create your views here.
 
@@ -12,6 +14,23 @@ def admin_student(request):
 
 # admin teacher view
 def admin_teacher(request):
+
+    if request.method == "POST":
+        print(request.POST)
+
+        teacher = Teacher()
+        
+        teacher_user_data = teacher.generate_user_details(request.POST)
+
+        if teacher_user_data:
+            username, password = teacher_user_data
+            user =  User.objects.create_user(username=username, password=password)
+
+            print("username: ", username)
+            print("password: ", password)
+            teacher.regitster_teacher(data=request.POST, userAccount=user)
+
+
     return render(request, "Admin_Teacher.html")
 
 # admin notice view
