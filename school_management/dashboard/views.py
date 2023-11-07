@@ -6,20 +6,39 @@ from django.contrib.auth.models import User
 # Create your views here.
 
 # admin home view
+# -----------------------------------------------------------------------------------------------
 def admin_dashboard(request):
     return render(request, "Admin_Dashboard.html")
 
+
+# -----------------------------------------------------------------------------------------------
 # admin students view
-def admin_student(request):    
+def admin_student(request):
+
+    if request.method == "GET":
+        return render(request, "Admin_Student.html")
+
     if request.method == "POST":
         student = Student()
-        
 
+        student_user_data = student.generate_user_details(request.POST)
+
+        if student_user_data:
+            username, password = student_user_data
+            user = User.objects.create_user(username=username, password=password)
+
+            student.register_student(data=request.POST, userAccount=user)
+
+        return render(request, "Admin_Student.html")    
+    
+
+
+# -----------------------------------------------------------------------------------------------
 # admin teacher view
 def admin_teacher(request):
 
     if request.method == "POST":
-        print(request.POST)
+        # print(request.POST)
 
         teacher = Teacher()
         
@@ -29,17 +48,21 @@ def admin_teacher(request):
             username, password = teacher_user_data
             user =  User.objects.create_user(username=username, password=password)
 
-            print("username: ", username)
-            print("password: ", password)
+            # print("username: ", username)
+            # print("password: ", password)
             teacher.regitster_teacher(data=request.POST, userAccount=user)
 
 
     return render(request, "Admin_Teacher.html")
 
+
+# -----------------------------------------------------------------------------------------------
 # admin notice view
 def admin_notice(request):
     return render(request, "Admin_Notice.html")
 
+
+# -----------------------------------------------------------------------------------------------
 # admin employee view
 def admin_employee(request):
     return render(request, "Admin_Employee.html")

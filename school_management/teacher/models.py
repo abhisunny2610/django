@@ -9,7 +9,7 @@ class Teacher(models.Model):
     Contact = models.CharField(max_length=10, default="", null=True)
     Dob = models.DateField()
     Salary = models.CharField(max_length=10, null=True)
-    Performance = models.CharField(default="", max_length=10, null=True)
+    Performance = models.CharField(default="Good", max_length=10,)
     Image = models.ImageField(upload_to='Image', blank=True, null=True)
     Registered = models.DateField(auto_now_add=True)
     userAccount = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
@@ -38,7 +38,7 @@ class Teacher(models.Model):
         userdob = data.get("dob")
 
         if len(userName) == 0:
-            return False
+            return False 
         
         if len(userdob) == 0:
             return False

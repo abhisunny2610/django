@@ -8,6 +8,7 @@ from teacher.models import Teacher
 
 # Create your views here.
 
+# -----------------------------------------------------------------------------------------------
 def login_as_student(request, username, password):
     print("logging as student...")
     user = auth.authenticate(request=request, username=username, password=password)
@@ -15,13 +16,17 @@ def login_as_student(request, username, password):
         student = Student.objects.get(userAccount_id = user.id)
         return user,student
 
+
+# -----------------------------------------------------------------------------------------------
 def login_as_teacher(request, username, password):
     print("logging as teacher...")
     user = auth.authenticate(request=request, username=username, password=password)
     if user:
         teacher = Teacher.objects.get(userAccount_id = user.id)
         return user,teacher
+    
 
+# -----------------------------------------------------------------------------------------------
 # login view
 def login(request):
     if request.method == "GET":
@@ -32,9 +37,9 @@ def login(request):
         password = request.POST.get("password")
         user_type = request.POST.get("user_type")
 
-        print("username :", username)
-        print("password :", password)
-        print("user_type :", user_type)
+        # print("username :", username)
+        # print("password :", password)
+        # print("user_type :", user_type)
 
         if user_type == "student":
             user,student = login_as_student(request, username, password)
@@ -57,8 +62,7 @@ def login(request):
     return redirect("login")
     
 
-    
-
+# -----------------------------------------------------------------------------------------------
 # signup view
 def signup(request):
     return render(request, "signup.html")
