@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from teacher.models import Teacher
 from student.models import Student
 from django.contrib.auth.models import User
@@ -8,15 +8,17 @@ from django.contrib.auth.models import User
 # admin home view
 # -----------------------------------------------------------------------------------------------
 def admin_dashboard(request):
-    return render(request, "Admin_Dashboard.html")
+    student = Student.objects.all()
+    teacher = Teacher.objects.all()
+    return render(request, "Admin_Dashboard.html", {"Student": student, "Teacher": teacher})
 
 
 # -----------------------------------------------------------------------------------------------
 # admin students view
 def admin_student(request):
-
     if request.method == "GET":
-        return render(request, "Admin_Student.html")
+        student = Student.objects.all()
+        return render(request, "Admin_Student.html", {"Student": student})
 
     if request.method == "POST":
         student = Student()
@@ -27,9 +29,10 @@ def admin_student(request):
             username, password = student_user_data
             user = User.objects.create_user(username=username, password=password)
 
-            student.register_student(data=request.POST, userAccount=user)
+            student.register_student(data=request.POST, userAccount=user, file=request.FILES)
 
-        return render(request, "Admin_Student.html")    
+        # return render(request, "Admin_Student.html")
+    return redirect(request, "admin_student")    
     
 
 
@@ -37,10 +40,16 @@ def admin_student(request):
 # admin teacher view
 def admin_teacher(request):
 
+    if request.method == "GET":
+        teacher = Teacher.objects.all()
+        # print("Teacher length", len(teacher))
+        return render(request, "Admin_Student.html", {"Teacher": teacher})
+
     if request.method == "POST":
         # print(request.POST)
 
         teacher = Teacher()
+
         
         teacher_user_data = teacher.generate_user_details(request.POST)
 
@@ -50,7 +59,7 @@ def admin_teacher(request):
 
             # print("username: ", username)
             # print("password: ", password)
-            teacher.regitster_teacher(data=request.POST, userAccount=user)
+            teacher.regitster_teacher(data=request.POST, userAccount=user,  file=request.FILES)
 
 
     return render(request, "Admin_Teacher.html")

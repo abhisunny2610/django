@@ -14,13 +14,15 @@ class Teacher(models.Model):
     Registered = models.DateField(auto_now_add=True)
     userAccount = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
 
-    def regitster_teacher(self, data, userAccount):
+    def regitster_teacher(self, data, userAccount, file):
         self.Name = data.get("name")
         self.Subject = data.get("subject")
         self.Qualification = data.get("qualification")
         self.Salary = data.get("salary")
         self.Contact = data.get("contact")
         self.Dob = data.get("dob")
+        self.Image = file.get("image")
+        self.City = data.get("city")
         
 
         self.userAccount = userAccount

@@ -13,12 +13,14 @@ class Student(models.Model):
     Registered = models.DateField(auto_now_add=True)
     userAccount = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
 
-    def register_student(self, data, userAccount):
+    def register_student(self, data, userAccount, file):
         self.Name = data.get("name")
         self.Std = data.get("class")
         self.Father_name = data.get("parent-name")
         self.Contact = data.get("contact") 
         self.Dob = data.get("dob")
+        self.City = data.get("city")
+        self.Image = file.get("image")
 
         self.userAccount = userAccount 
         self.userAccount.save()
