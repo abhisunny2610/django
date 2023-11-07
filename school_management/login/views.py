@@ -10,7 +10,7 @@ from teacher.models import Teacher
 
 # -----------------------------------------------------------------------------------------------
 def login_as_student(request, username, password):
-    print("logging as student...")
+    # print("logging as student...")
     user = auth.authenticate(request=request, username=username, password=password)
     if user:
         student = Student.objects.get(userAccount_id = user.id)
@@ -19,7 +19,7 @@ def login_as_student(request, username, password):
 
 # -----------------------------------------------------------------------------------------------
 def login_as_teacher(request, username, password):
-    print("logging as teacher...")
+    # print("logging as teacher...")
     user = auth.authenticate(request=request, username=username, password=password)
     if user:
         teacher = Teacher.objects.get(userAccount_id = user.id)
@@ -45,7 +45,7 @@ def login(request):
             user,student = login_as_student(request, username, password)
             if user and student:
                 request.session["userId"] = user.id
-                request.session["user_type"] = "teacher"
+                request.session["user_type"] = "student"
                 request.session["studentId"] = student.id
                 auth.login(request, user)
                 return redirect("student_home")
