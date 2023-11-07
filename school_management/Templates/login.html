@@ -18,7 +18,7 @@
         </div>
         <div class="form-container">
             <h3>Here you can Login</h3>
-            <form action="" class="form" method="POST">
+            <form action="{% url 'login' %}" class="form" method="POST">
                 {% csrf_token %}
                 <div class="email-box">
                     <label for="username">Username</label> <br>
@@ -27,6 +27,13 @@
                 <div class="password-box">
                     <label for="password">Password</label> <br>
                     <input type="password" id="password" name="password" required>
+                </div>
+
+                <div>
+                    <input type="radio" id="student" name="user_type" value="student">
+                    <label for="student">Student</label><br>
+                    <input type="radio" id="teacher" name="user_type" value="teacher">
+                    <label for="teacher">Teacher</label><br>
                 </div>
 
                 <button type="submit">Login</button>

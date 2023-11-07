@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from teacher.models import Teacher
+from student.models import Student
 from django.contrib.auth.models import User
 
 # Create your views here.
@@ -9,8 +10,10 @@ def admin_dashboard(request):
     return render(request, "Admin_Dashboard.html")
 
 # admin students view
-def admin_student(request):
-    return render(request, "Admin_Student.html")
+def admin_student(request):    
+    if request.method == "POST":
+        student = Student()
+        
 
 # admin teacher view
 def admin_teacher(request):

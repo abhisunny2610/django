@@ -19,7 +19,7 @@ class Student(models.Model):
         self.Contact = Contact
         self.Dob = Dob
         self.Image = Image
-        self.Registered = Registered
+        self.Registered = Registered  
 
         self.save()
 
