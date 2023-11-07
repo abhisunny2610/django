@@ -41,6 +41,24 @@ body {
                 margin-right: 10px;
             }
         }
+
+        > .logout{
+
+            > a{
+              
+                background-color: rgb(255, 44, 44);
+                padding: 10px;
+                border-radius: 10px;
+                width: fit-content;
+                color: white;
+                text-decoration: none;
+            }
+
+            > a:active{
+                background-color: rgb(155, 1, 1);
+                box-shadow: 1px 1px 2px black;
+            }
+        }
     }
 }
 

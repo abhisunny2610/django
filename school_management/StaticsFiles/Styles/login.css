@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 
-body{
+body {
     /* background-image: url("./6722067.jpg"); */
     background-position-x: right;
     background-position-y: start;
@@ -21,14 +21,14 @@ body{
     height: 100vh;
 
     >.img {
-        > img {
+        >img {
             width: 350px;
         }
 
-        > h3{
+        >h3 {
             text-align: center;
-            font-size: 50px;
-            
+            font-size: 45px;
+
         }
     }
 
@@ -80,6 +80,11 @@ body{
                 border: none;
                 background-color: rgb(112, 186, 1);
             }
+
+            >button:hover,
+            button:active {
+                background-color: rgb(78, 131, 0);
+            }
         }
 
         >.f-password {
@@ -99,4 +104,44 @@ body{
             font-weight: 400;
         }
     }
+}
+
+.usertype_box{
+    display: flex;
+    align-items: center;
+}
+
+.usertype_box label {
+    margin-right: 15px;
+    /* line-height: 32px; */
+    font-size: 16px ;
+    font-family: sans-serif;
+}
+
+
+input {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+
+    border: 2px solid lightskyblue;
+    transition: 0.2s all linear;
+    margin-right: 5px;
+
+    position: relative;
+    /* top: 2px; */
+}
+
+input:checked {
+    border: 8px solid lightskyblue;
+}
+
+.d-flex{
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
