@@ -10,7 +10,17 @@ from django.contrib.auth.models import User
 def admin_dashboard(request):
     student = Student.objects.all()
     teacher = Teacher.objects.all()
-    return render(request, "Admin_Dashboard.html", {"Student": student, "Teacher": teacher})
+    student_length = len(student)
+    teacher_length = len(teacher)
+
+    context = {
+        "Student": student,
+        "Teacher": teacher ,
+        "teacher_length" : teacher_length,
+        "student_length": student_length
+    }
+
+    return render(request, "Admin_Dashboard.html",context)
 
 
 # -----------------------------------------------------------------------------------------------
@@ -43,7 +53,7 @@ def admin_teacher(request):
     if request.method == "GET":
         teacher = Teacher.objects.all()
         # print("Teacher length", len(teacher))
-        return render(request, "Admin_Student.html", {"Teacher": teacher})
+        return render(request, "Admin_Teacher.html", {"Teacher": teacher})
 
     if request.method == "POST":
         # print(request.POST)
