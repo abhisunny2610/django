@@ -33,7 +33,7 @@
                 <div class="avatar">
                     <span class="material-symbols-outlined">
                         person
-                        </span>
+                    </span>
                 </div>
                 <div class="category">
                     <p>Total Teacher</p>
@@ -44,7 +44,7 @@
                 <div class="avatar">
                     <span class="material-symbols-outlined">
                         person_apron
-                        </span>
+                    </span>
                 </div>
                 <div class="category">
                     <p>Total Employee</p>
@@ -55,7 +55,7 @@
                 <div class="avatar">
                     <span class="material-symbols-outlined">
                         note_alt
-                        </span>
+                    </span>
                 </div>
                 <div class="category">
                     <p>Total Notice</p>
@@ -73,6 +73,7 @@
                     <th>Registered Date</th>
                     <th>Subject</th>
                     <th>Qualification</th>
+                    <th>DOB</th>
                     <th>Performance</th>
                     <th>Contact</th>
                     <th>City</th>
@@ -86,20 +87,25 @@
                     <td>{{teacher.Registered}}</td>
                     <td>{{teacher.Subject}}</td>
                     <td>{{teacher.Qualification}}</td>
+                    <td>{{teacher.Dob}}</td>
                     <td>{{teacher.Performance}}</td>
                     <td>+91-{{teacher.Contact}}</td>
                     <td>{{teacher.City}}</td>
                     <td>{{teacher.Salary}}</td>
-                    <td><span class="material-symbols-outlined">
-                            visibility
-                        </span>
-                        <span class="material-symbols-outlined">
-                            delete
-                        </span>
+                    <td><a href="">
+                            <span class="material-symbols-outlined">
+                                visibility
+                            </span>
+                        </a>
+                        <a href="{% url 'delete_teacher' teacher.id %}">
+                            <span class="material-symbols-outlined">
+                                delete
+                            </span>
+                        </a>
                     </td>
                 </tr>
                 {% endfor %}
-           
+
             </table>
         </div>
 

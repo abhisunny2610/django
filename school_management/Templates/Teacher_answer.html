@@ -58,12 +58,16 @@
                 </p>
 
                 <div class="actions">
-                    <button title="update"><span class="material-symbols-outlined">
+                    <button title="update"><a href="{% url 'update_question' question.id %}">
+                        <span class="material-symbols-outlined">
                             edit_note
-                        </span></button>
-                    <button title="delete"><span class="material-symbols-outlined">
+                        </span>
+                    </a></button>
+                    <button title="delete"><a href="{% url 'delete_question' question.id %}">
+                        <span class="material-symbols-outlined">
                             delete
-                        </span></button>
+                        </span>
+                    </a></button>
                 </div>
             </div>
 

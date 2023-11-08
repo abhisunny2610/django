@@ -63,17 +63,21 @@
                     <td>+91-{{emp.contact}}</td>
                     <td>{{emp.role}}</td>
                     <td>{{emp.salary}}</td>
-                    <td><span class="material-symbols-outlined">
-                            visibility
-                        </span>
-                        <span class="material-symbols-outlined">
-                            delete
-                        </span>
+                    <td><a href="">
+                            <span class="material-symbols-outlined">
+                                visibility
+                            </span>
+                        </a>
+                        <a href="{% url 'delete_employee' emp.id %}">
+                            <span class="material-symbols-outlined">
+                                delete
+                            </span>
+                        </a>
                     </td>
                 </tr>
-                  
+
                 {% endfor %}
-                
+
             </table>
         </div>
 

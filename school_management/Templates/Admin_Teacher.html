@@ -62,14 +62,18 @@
                     </div>
                     <div class="right">
                         <button title="Update">
-                            <span class="material-symbols-outlined">
-                                edit_note
-                            </span>
+                            <a href="">
+                                <span class="material-symbols-outlined">
+                                    edit_note
+                                </span>
+                            </a>
                         </button>
                         <button title="Delete">
-                            <span class="material-symbols-outlined">
-                                delete
-                            </span>
+                            <a href="{% url 'delete_teacher' teacher.id %}">
+                                <span class="material-symbols-outlined">
+                                    delete
+                                </span>
+                            </a>
                         </button>
                     </div>
                 </div>

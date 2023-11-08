@@ -8,8 +8,6 @@ from django.contrib.auth.models import User
 
 # admin home view
 # -----------------------------------------------------------------------------------------------
-
-
 def admin_dashboard(request):
     student = Student.objects.all()
     teacher = Teacher.objects.all()
@@ -111,4 +109,28 @@ def admin_employee(request):
     if request.method == "POST":
         employee = Employee()
         employee.register_employee(request.POST)
+        return redirect("admin_employee")
+
+
+# -----------------------------------------------------------------------------------------------
+def delete_teacher(request, id):
+    if request.method == "GET":
+        teacher = Teacher.objects.get(pk=id)
+        teacher.delete()
+        return redirect("admin_dashboard")
+    
+
+# -----------------------------------------------------------------------------------------------
+def delete_student(request, id):
+    if request.method == "GET":
+        student = Student.objects.get(pk=id)
+        student.delete()
+        return redirect("admin_dashboard")
+    
+
+# -----------------------------------------------------------------------------------------------
+def delete_employee(request, id):
+    if request.method == "GET":
+        employee = Employee.objects.get(pk=id)
+        employee.delete()
         return redirect("admin_employee")

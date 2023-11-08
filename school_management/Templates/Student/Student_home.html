@@ -17,33 +17,18 @@
     <div class="body-container">
         <h1>Web Development Quiz</h1>
         <div class="questions">
-            <p class="ques">1. The decimal range of network address for class B network is between</p>
+            {% for question in Question %}
+            <p class="ques">Ques. {{question.question}}</p>
             <div class="options">
-                <input type="radio" id="option" name="answer">
-                <label for="option">127-190</label><br>
-                <input type="radio" id="option" name="answer">
-                <label for="option">128-190</label><br>
-                <input type="radio" id="option" name="answer">
-                <label for="option">128-191</label>
+                <input type="radio" id="option" name="option1">
+                <label for="option">{{question.option1}}</label><br>
+                <input type="radio" id="option" name="option2">
+                <label for="option">{{question.option2}}</label><br>
+                <input type="radio" id="option" name="option3">
+                <label for="option">{{question.option3}}</label>
             </div>
-            <p class="ques">2. The decimal range of network address for class B network is between</p>
-            <div class="options">
-                <input type="radio" id="option" name="answer">
-                <label for="option">127-190</label><br>
-                <input type="radio" id="option" name="answer">
-                <label for="option">128-190</label><br>
-                <input type="radio" id="option" name="answer">
-                <label for="option">128-191</label>
-            </div>
-            <p class="ques">3. The decimal range of network address for class B network is between</p>
-            <div class="options">
-                <input type="radio" id="option" name="answer">
-                <label for="option">127-190</label><br>
-                <input type="radio" id="option" name="answer">
-                <label for="option">128-190</label><br>
-                <input type="radio" id="option" name="answer">
-                <label for="option">128-191</label>
-            </div>
+
+            {% endfor %}
 
             <button>Submit</button>
         </div>

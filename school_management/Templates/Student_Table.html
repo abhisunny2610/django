@@ -26,15 +26,19 @@
             <td><a href=""><span class="material-symbols-outlined">
                         visibility
                     </span></a>
-                <span class="material-symbols-outlined">
-                    edit_note
-                </span>
-                <span class="material-symbols-outlined">
-                    delete
-                </span>
+                <a href="">
+                    <span class="material-symbols-outlined">
+                        edit_note
+                    </span>
+                </a>
+                <a href="{% url 'delete_student' student.id %}">
+                    <span class="material-symbols-outlined">
+                        delete
+                    </span>
+                </a>
             </td>
         </tr>
         {% endfor %}
-   
+
     </table>
 </div>

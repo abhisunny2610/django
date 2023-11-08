@@ -10,7 +10,6 @@ def teacher_home(request):
     teacher = Teacher.objects.get(pk=int(teacher_id))
     student = Student.objects.all()
 
-
     context = {
         "Teacher": teacher,
         "Student": student,
@@ -25,7 +24,6 @@ def add_notice(request):
     teacher_id = request.session.get("teacherId")
     teacher = Teacher.objects.get(pk=int(teacher_id))
     student = Student.objects.all()
-
 
     context = {
         "Teacher": teacher,
@@ -61,7 +59,6 @@ def add_question(request):
         teacher = Teacher.objects.get(pk=int(teacher_id))
         student = Student.objects.all()
 
-
         context = {
             "Teacher": teacher,
             "Student": student,
@@ -74,3 +71,21 @@ def add_question(request):
         question.add_question(request.POST)
 
         return redirect("add_question")
+
+
+# -----------------------------------------------------------------------------------------------
+def delete_question(request , id):
+    if request.method == "GET":
+        question = AddQuestion.objects.get(pk=id)
+        question.delete()
+        return redirect("answer")
+    
+
+# -----------------------------------------------------------------------------------------------
+def update_question(request, id):
+    if request.method == "GET":
+        pass
+
+    if request.method == "POST":
+        pass
+
