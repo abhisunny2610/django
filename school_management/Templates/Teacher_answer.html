@@ -42,133 +42,32 @@
 
         <!-- <h4>All Questions & Answers</h4> -->
         <div class="answers-container">
+            {% for question in Question %}
+
             <div class="answer-card">
                 <p class="ques">
-                    Ques. There are ___ levels of heading in HTML
+                    Ques. {{question.question}}
                 </p>
                 <div class="options">
-                    <p>a: Three</p>
-                    <p>b: Six</p>
-                    <p>c: Five</p>
+                    <p>a: {{question.option1}}</p>
+                    <p>b: {{question.option2}}</p>
+                    <p>c: {{question.option3}}</p>
                 </div>
                 <p class="correct">
-                    <span>Answer</span> Six
+                    <span>Answer</span> {{question.answer}}
                 </p>
 
                 <div class="actions">
                     <button title="update"><span class="material-symbols-outlined">
-                        edit_note
+                            edit_note
                         </span></button>
                     <button title="delete"><span class="material-symbols-outlined">
-                        delete
+                            delete
                         </span></button>
                 </div>
             </div>
-            <div class="answer-card">
-                <p class="ques">
-                    Ques. The decimal range of network address for class B network is between
-                </p>
-                <div class="options">
-                    <p>a: 127-190</p>
-                    <p>b: 128-190</p>
-                    <p>c: 128-191</p>
-                </div>
-                <p class="correct">
-                    <span>Answer</span> 128-191
-                </p>
-                <div class="actions">
-                    <button title="update"><span class="material-symbols-outlined">
-                        edit_note
-                        </span></button>
-                    <button title="delete"><span class="material-symbols-outlined">
-                        delete
-                        </span></button>
-                </div>
-            </div>
-            <div class="answer-card">
-                <p class="ques">
-                    Ques. There are ___ levels of heading in HTML
-                </p>
-                <div class="options">
-                    <p>a: Three</p>
-                    <p>b: Six</p>
-                    <p>c: Five</p>
-                </div>
-                <p class="correct">
-                    <span>Answer</span> Six
-                </p>
-                <div class="actions">
-                    <button title="update"><span class="material-symbols-outlined">
-                        edit_note
-                        </span></button>
-                    <button title="delete"><span class="material-symbols-outlined">
-                        delete
-                        </span></button>
-                </div>
-            </div>
-            <div class="answer-card">
-                <p class="ques">
-                    Ques. The decimal range of network address for class B network is between
-                </p>
-                <div class="options">
-                    <p>a: 127-190</p>
-                    <p>b: 128-190</p>
-                    <p>c: 128-191</p>
-                </div>
-                <p class="correct">
-                    <span>Answer</span> 128-191
-                </p>
-                 <div class="actions">
-                    <button title="update"><span class="material-symbols-outlined">
-                        edit_note
-                        </span></button>
-                    <button title="delete"><span class="material-symbols-outlined">
-                        delete
-                        </span></button>
-                </div>
-            </div>
-            <div class="answer-card">
-                <p class="ques">
-                    Ques. There are ___ levels of heading in HTML
-                </p>
-                <div class="options">
-                    <p>a: Three</p>
-                    <p>b: Six</p>
-                    <p>c: Five</p>
-                </div>
-                <p class="correct">
-                    <span>Answer</span> Six
-                </p>
-                 <div class="actions">
-                    <button title="update"><span class="material-symbols-outlined">
-                        edit_note
-                        </span></button>
-                    <button title="delete"><span class="material-symbols-outlined">
-                        delete
-                        </span></button>
-                </div>
-            </div>
-            <div class="answer-card">
-                <p class="ques">
-                    Ques. The decimal range of network address for class B network is between
-                </p>
-                <div class="options">
-                    <p>a: 127-190</p>
-                    <p>b: 128-190</p>
-                    <p>c: 128-191</p>
-                </div>
-                <p class="correct">
-                    <span>Answer</span> 128-191
-                </p>
-                 <div class="actions">
-                    <button title="update"><span class="material-symbols-outlined">
-                        edit_note
-                        </span></button>
-                    <button title="delete"><span class="material-symbols-outlined">
-                        delete
-                        </span></button>
-                </div>
-            </div>
+
+            {% endfor %}
         </div>
 
         {% include "CopyRight.html" %}

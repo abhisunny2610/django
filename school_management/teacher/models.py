@@ -55,13 +55,17 @@ class Teacher(models.Model):
 
 class AddQuestion(models.Model):
     question = models.CharField(max_length=150, default='', null=True)
-    answer1 = models.CharField(max_length=100, default="", null=True)
-    answer2 = models.CharField(max_length=100, default="", null=True)
-    answer3 = models.CharField(max_length=100, default="", null=True)
+    option1 = models.CharField(max_length=100, default="", null=True)
+    option2 = models.CharField(max_length=100, default="", null=True)
+    option3 = models.CharField(max_length=100, default="", null=True)
+    answer = models.CharField(max_length=100, default="", null=True)
 
     def add_question(self, data):
-        self.question = data.get("")
-        self.answer1 = data.get("")
-        self.answer2 = data.get("")
-        self.answer3 = data.get("")
+        self.question = data.get("question")
+        self.option1 = data.get("optionA")
+        self.option2 = data.get("optionB")
+        self.option3 = data.get("optionC")
+        self.answer = data.get("answer")
+
+        self.save()
     

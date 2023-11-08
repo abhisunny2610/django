@@ -1,5 +1,5 @@
-from django.shortcuts import render
-from .models import Teacher
+from django.shortcuts import render, redirect
+from .models import Teacher, AddQuestion
 from student.models import Student
 # Create your views here.
 
@@ -22,7 +22,17 @@ def teacher_home(request):
 
 # -----------------------------------------------------------------------------------------------
 def add_notice(request):
-    return render(request, "Admin_Notice.html")
+    teacher_id = request.session.get("teacherId")
+    teacher = Teacher.objects.get(pk=int(teacher_id))
+    student = Student.objects.all()
+
+
+    context = {
+        "Teacher": teacher,
+        "Student": student,
+
+    }
+    return render(request, "Admin_Notice.html",context)
 
 
 # -----------------------------------------------------------------------------------------------
@@ -32,9 +42,35 @@ def teacher_profile(request):
 
 # -----------------------------------------------------------------------------------------------
 def answer(request):
-    return render(request, "Teacher_answer.html")
+    if request.method == "GET":
+        teacher_id = request.session.get("teacherId")
+        teacher = Teacher.objects.get(pk=int(teacher_id))
+        question = AddQuestion.objects.all()
+
+        context = {
+            "Teacher": teacher,
+            "Question":question
+        }
+        return render(request, "Teacher_answer.html", context)
 
 
 # -----------------------------------------------------------------------------------------------
 def add_question(request):
-    return render(request, "Teacher_Add_Question.html")
+    if request.method == "GET":
+        teacher_id = request.session.get("teacherId")
+        teacher = Teacher.objects.get(pk=int(teacher_id))
+        student = Student.objects.all()
+
+
+        context = {
+            "Teacher": teacher,
+            "Student": student,
+
+        }
+        return render(request, "Teacher_Add_Question.html", context)
+    
+    if request.method == "POST":
+        question = AddQuestion()
+        question.add_question(request.POST)
+
+        return redirect("add_question")
