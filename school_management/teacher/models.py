@@ -48,3 +48,8 @@ class Teacher(models.Model):
         # generating the password.
         userdob_ = "".join(userdob.split('-'))
         return (userName, userName.upper() + "@" + userdob_)
+
+    
+    def __str__(self):
+        return self.Name
+

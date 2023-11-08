@@ -8,20 +8,26 @@ from django.contrib.auth.models import User
 
 # admin home view
 # -----------------------------------------------------------------------------------------------
+
+
 def admin_dashboard(request):
     student = Student.objects.all()
     teacher = Teacher.objects.all()
+    employee = Employee.objects.all()
     student_length = len(student)
     teacher_length = len(teacher)
+    employee_length = len(employee)
 
     context = {
         "Student": student,
-        "Teacher": teacher ,
-        "teacher_length" : teacher_length,
-        "student_length": student_length
+        "Teacher": teacher,
+        "Employee":employee,
+        "teacher_length": teacher_length,
+        "student_length": student_length,
+        "employee_length": employee_length
     }
 
-    return render(request, "Admin_Dashboard.html",context)
+    return render(request, "Admin_Dashboard.html", context)
 
 
 # -----------------------------------------------------------------------------------------------
@@ -38,13 +44,14 @@ def admin_student(request):
 
         if student_user_data:
             username, password = student_user_data
-            user = User.objects.create_user(username=username, password=password)
+            user = User.objects.create_user(
+                username=username, password=password)
 
-            student.register_student(data=request.POST, userAccount=user, file=request.FILES)
+            student.register_student(
+                data=request.POST, userAccount=user, file=request.FILES)
 
         # return render(request, "Admin_Student.html")
-    return redirect(request, "admin_student")    
-    
+    return redirect(request, "admin_student")
 
 
 # -----------------------------------------------------------------------------------------------
@@ -61,17 +68,17 @@ def admin_teacher(request):
 
         teacher = Teacher()
 
-        
         teacher_user_data = teacher.generate_user_details(request.POST)
 
         if teacher_user_data:
             username, password = teacher_user_data
-            user =  User.objects.create_user(username=username, password=password)
+            user = User.objects.create_user(
+                username=username, password=password)
 
             # print("username: ", username)
             # print("password: ", password)
-            teacher.regitster_teacher(data=request.POST, userAccount=user,  file=request.FILES)
-
+            teacher.regitster_teacher(
+                data=request.POST, userAccount=user,  file=request.FILES)
 
     return render(request, "Admin_Teacher.html")
 
@@ -86,9 +93,10 @@ def admin_notice(request):
 # admin employee view
 def admin_employee(request):
     if request.method == "GET":
-        return render(request, "Admin_Employee.html")
-    
+        employee = Employee.objects.all()
+        return render(request, "Admin_Employee.html", {"Employee":employee})
+
     if request.method == "POST":
         employee = Employee()
         employee.register_employee(request.POST)
-
+        return redirect("admin_employee")
