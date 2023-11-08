@@ -14,17 +14,22 @@ def admin_dashboard(request):
     student = Student.objects.all()
     teacher = Teacher.objects.all()
     employee = Employee.objects.all()
+    notice = Notice.objects.all()
     student_length = len(student)
     teacher_length = len(teacher)
     employee_length = len(employee)
+    notice_length = len(notice)
 
     context = {
         "Student": student,
         "Teacher": teacher,
         "Employee": employee,
+        "Notice": notice,
         "teacher_length": teacher_length,
         "student_length": student_length,
-        "employee_length": employee_length
+        "employee_length": employee_length,
+        "notice_length": notice_length,
+
     }
 
     return render(request, "Admin_Dashboard.html", context)

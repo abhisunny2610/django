@@ -32,8 +32,6 @@ class Teacher(models.Model):
         # then save the account.
         self.save()
 
-
-
     def generate_user_details(self, data):
 
         userName = data.get("name")
@@ -49,7 +47,21 @@ class Teacher(models.Model):
         userdob_ = "".join(userdob.split('-'))
         return (userName, userName.upper() + "@" + userdob_)
 
-    
+
     def __str__(self):
         return self.Name
 
+
+
+class AddQuestion(models.Model):
+    question = models.CharField(max_length=150, default='', null=True)
+    answer1 = models.CharField(max_length=100, default="", null=True)
+    answer2 = models.CharField(max_length=100, default="", null=True)
+    answer3 = models.CharField(max_length=100, default="", null=True)
+
+    def add_question(self, data):
+        self.question = data.get("")
+        self.answer1 = data.get("")
+        self.answer2 = data.get("")
+        self.answer3 = data.get("")
+    

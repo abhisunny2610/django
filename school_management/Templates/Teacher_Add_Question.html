@@ -18,7 +18,8 @@
 
         <div class="add-ques-container">
             
-                <form action="">
+                <form action="{% url 'add_question' %}" method="post">
+                    {% csrf_token %}
                     <p>Please fill the form to add question and all fields the compulsory.</p>
                     <label for="question">Question</label>
                     <input type="text" name="question">

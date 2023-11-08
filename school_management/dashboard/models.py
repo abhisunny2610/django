@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils.timezone import timezone
 
 # Create your models here.
 class Employee(models.Model):
@@ -26,9 +27,8 @@ class Employee(models.Model):
 
 class Notice(models.Model):
     post_by = models.CharField(max_length=40, null=True, default="")
-    description = models.TextField(null=True, default="")
+    description = models.TextField(max_length=5000, null=True)
     title= models.CharField(null=True, default="", max_length=200)
-    posted_on = models.DateTimeField(auto_now_add=True, default=da)
 
     def __str__(self):
         return self.title
@@ -39,3 +39,4 @@ class Notice(models.Model):
         self.description = data.get("description")
 
         self.save()
+
