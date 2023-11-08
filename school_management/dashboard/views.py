@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from teacher.models import Teacher
 from student.models import Student
-from .models import Employee
+from .models import Employee, Notice
 from django.contrib.auth.models import User
 
 # Create your views here.
@@ -21,7 +21,7 @@ def admin_dashboard(request):
     context = {
         "Student": student,
         "Teacher": teacher,
-        "Employee":employee,
+        "Employee": employee,
         "teacher_length": teacher_length,
         "student_length": student_length,
         "employee_length": employee_length
@@ -86,7 +86,14 @@ def admin_teacher(request):
 # -----------------------------------------------------------------------------------------------
 # admin notice view
 def admin_notice(request):
-    return render(request, "Admin_Notice.html")
+    if request.method == "GET":
+        notice = Notice.objects.all()
+        return render(request, "Admin_Notice.html", {"Notice": notice})
+
+    if request.method == "POST":
+        notice = Notice()
+        notice.register_notice(request.POST)
+        return redirect("admin_notice")
 
 
 # -----------------------------------------------------------------------------------------------
@@ -94,7 +101,7 @@ def admin_notice(request):
 def admin_employee(request):
     if request.method == "GET":
         employee = Employee.objects.all()
-        return render(request, "Admin_Employee.html", {"Employee":employee})
+        return render(request, "Admin_Employee.html", {"Employee": employee})
 
     if request.method == "POST":
         employee = Employee()

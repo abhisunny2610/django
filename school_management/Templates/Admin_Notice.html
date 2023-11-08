@@ -92,27 +92,13 @@
 
                     </div>
                 </div>
-                <div class="notice-card">
-
-                    <h3 class="title">Result of m.tech 2 year is out now you can check on official website.</h3>
-
-
-                    <p class="desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. At vero maxime rerum
-                        delectus eum commodi sed unde enim repellat modi odit, suscipit asperiores nemo incidunt
-                        doloremque, aperiam quos, ducimus nesciunt.</p><a href="">Read More...</a>
-
-                    <div class="notice-details d-flex">
-
-                        <p class="post-by" style="color: #FB7D5B;">Post by School Management</p>
-                        <p class="date">Sat, 27/10/2023</p>
-
-                    </div>
-                </div>
+       
             </div>
 
             <div class="notice-form">
                 <h4>Add New Notice</h4>
-                <form action="" class="form-notice">
+                <form action="{% url 'admin_notice' %}" class="form-notice" method="post">
+                    {% csrf_token %}
                     <input type="text" name="post-by" placeholder="Post By" autofocus> <br>
                     <input type="text" name="title" placeholder="Title"> <br>
                     <textarea name="description" id="" cols="70" rows="10" placeholder="Description" form="form-notice"></textarea> <br>

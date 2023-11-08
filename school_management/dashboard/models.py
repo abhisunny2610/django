@@ -22,3 +22,20 @@ class Employee(models.Model):
         self.contact = data.get("contact")
 
         self.save()
+
+
+class Notice(models.Model):
+    post_by = models.CharField(max_length=40, null=True, default="")
+    description = models.TextField(null=True, default="")
+    title= models.CharField(null=True, default="", max_length=200)
+    posted_on = models.DateTimeField(auto_now_add=True, default=da)
+
+    def __str__(self):
+        return self.title
+    
+    def register_notice(self, data):
+        self.post_by = data.get("post-by")
+        self.title = data.get("title")
+        self.description = data.get("description")
+
+        self.save()
