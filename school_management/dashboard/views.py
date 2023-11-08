@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from teacher.models import Teacher
 from student.models import Student
+from .models import Employee
 from django.contrib.auth.models import User
 
 # Create your views here.
@@ -84,4 +85,10 @@ def admin_notice(request):
 # -----------------------------------------------------------------------------------------------
 # admin employee view
 def admin_employee(request):
-    return render(request, "Admin_Employee.html")
+    if request.method == "GET":
+        return render(request, "Admin_Employee.html")
+    
+    if request.method == "POST":
+        employee = Employee()
+        employee.register_employee(request.POST)
+

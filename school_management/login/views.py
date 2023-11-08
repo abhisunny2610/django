@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib import auth
 from django.contrib.auth.models import User
+from django.http import HttpResponse
 
 from student.models import Student
 from teacher.models import Teacher
@@ -66,3 +67,23 @@ def login(request):
 # signup view
 def signup(request):
     return render(request, "signup.html")
+
+
+# -----------------------------------------------------------------------------------------------
+def dashboard_login(request):
+    if request.method == "GET":
+        return render(request, "dashboard_login.html")
+    
+    if request.method == "POST":
+        username = request.POST.get("username")
+        password = request.POST.get("password")
+
+        user = auth.authenticate(request, username=username, password=password)
+
+        if user:
+            auth.login(request, user)
+            return redirect("dashboard")
+        else:
+            return HttpResponse("Username or password not found")
+        
+    return redirect("admin_dashboard")
