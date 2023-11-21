@@ -160,3 +160,16 @@ def update_employee(request, id):
         employee.register_employee(request.POST)
 
         return redirect("admin_employee")
+    
+
+# -----------------------------------------------------------------------------------------------
+def update_student(request, id):
+    if request.method == "GET":
+        student = Student.objects.get(pk=id)
+        return render(request, "Update_Forms/Student_Update.html", {"student": student})
+    
+    if request.method == "POST":
+        student = Student.objects.get(pk=id)
+        student.regitster_teacher(request.POST)
+
+        return redirect("admin_student")

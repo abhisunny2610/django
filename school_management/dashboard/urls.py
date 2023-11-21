@@ -15,5 +15,6 @@ urlpatterns = [
 
     # update urls
     path('update_teacher/<int:id>', view=views.update_teacher, name="update_teacher"),
-    path('update_employee/<int:id>', view=views.update_employee, name="update_employee")
+    path('update_employee/<int:id>', view=views.update_employee, name="update_employee"),
+    path('update_student/<int:id>', view=views.update_student, name="update_student"),
 ]

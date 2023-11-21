@@ -23,19 +23,35 @@
             <td>{{student.City}}</td>
             <td>+91-{{student.Contact}}</td>
             <td>{{student.Std}}</td>
-            <td><a href=""><span class="material-symbols-outlined">
-                        visibility
-                    </span></a>
-                <a href="">
-                    <span class="material-symbols-outlined">
-                        edit_note
-                    </span>
-                </a>
-                <a href="{% url 'delete_student' student.id %}">
-                    <span class="material-symbols-outlined">
-                        delete
-                    </span>
-                </a>
+            <td style="text-align: center;" class="flex">
+                <div class="menu-item">
+                    <span class="material-symbols-outlined h-button">
+                        more_horiz
+                        </span>
+
+                        <div class="menu-list">
+                            <a href="">
+                                <span class="material-symbols-outlined">
+                                    visibility
+                                </span>
+                                View
+                            </a>
+    
+                            <a title="Update" href="{% url 'update_student' student.id %}">
+                                <span class="material-symbols-outlined">
+                                    edit_note
+                                </span>
+                                Update
+                            </a>
+    
+                            <a href="{% url 'delete_student' student.id %}">
+                                <span class="material-symbols-outlined">
+                                    delete
+                                </span>
+                                Delete
+                            </a>
+                        </div>
+                </div>
             </td>
         </tr>
         {% endfor %}

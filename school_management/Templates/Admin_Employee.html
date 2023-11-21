@@ -63,23 +63,35 @@
                     <td>+91-{{emp.contact}}</td>
                     <td>{{emp.role}}</td>
                     <td>{{emp.salary}}</td>
-                    <td><a href="">
-                            <span class="material-symbols-outlined">
-                                visibility
-                            </span>
-                        </a>
-
-                        <a title="Update" href="{% url 'update_employee' emp.id %}">
-                            <span class="material-symbols-outlined">
-                                edit_note
-                            </span>
-                        </a>
-
-                        <a href="{% url 'delete_employee' emp.id %}">
-                            <span class="material-symbols-outlined">
-                                delete
-                            </span>
-                        </a>
+                    <td style="text-align: center;" class="flex">
+                        <div class="menu-item">
+                            <span class="material-symbols-outlined h-button">
+                                more_horiz
+                                </span>
+    
+                                <div class="menu-list">
+                                    <a href="">
+                                        <span class="material-symbols-outlined">
+                                            visibility
+                                        </span>
+                                        View
+                                    </a>
+            
+                                    <a title="Update" href="{% url 'update_employee' emp.id %}">
+                                        <span class="material-symbols-outlined">
+                                            edit_note
+                                        </span>
+                                        Update
+                                    </a>
+            
+                                    <a href="{% url 'delete_employee' emp.id %}">
+                                        <span class="material-symbols-outlined">
+                                            delete
+                                        </span>
+                                        Delete
+                                    </a>
+                                </div>
+                        </div>
                     </td>
                 </tr>
 

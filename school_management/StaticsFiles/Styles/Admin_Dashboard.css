@@ -42,10 +42,10 @@ body {
             }
         }
 
-        > .logout{
+        >.logout {
 
-            > a{
-              
+            >a {
+
                 background-color: rgb(255, 44, 44);
                 padding: 10px;
                 border-radius: 10px;
@@ -54,7 +54,7 @@ body {
                 text-decoration: none;
             }
 
-            > a:active{
+            >a:active {
                 background-color: rgb(155, 1, 1);
                 box-shadow: 1px 1px 2px black;
             }
@@ -548,8 +548,7 @@ button:hover {
                 }
 
                 >input[type=text],
-                input[type=tel]
-                {
+                input[type=tel] {
                     width: 100%;
                     /* padding: 12px 20px; */
                     margin: 0px 0;
@@ -560,7 +559,7 @@ button:hover {
                     border-radius: 4px;
                     box-sizing: border-box;
                     outline: none;
-                    padding:0px 10px;
+                    padding: 0px 10px;
                 }
 
                 >input:focus {
@@ -587,7 +586,7 @@ button:hover {
 
 }
 
-.update-form{
+.update-form {
     background: url("../Images/watercolor-4116932_1280.png") no-repeat center center;
 }
 
@@ -619,4 +618,42 @@ button:hover {
 
 .popup-wrapper::-webkit-scrollbar {
     width: 0px;
+}
+
+
+td.flex>.menu-item:hover .menu-list {
+    display: flex;
+    flex-direction: column;
+    align-items: self-start;
+    /* justify-content: center; */
+    gap: 10px;
+}
+
+.menu-list {
+    /* padding: 5px 10px; */
+    list-style-type: none;
+    background-color: white;
+    padding: 2px;
+    display: none;
+    position: absolute;
+    width: 100px;
+    left: -100%;
+    top: 50%;
+    z-index: 100;
+}
+
+.menu-item {
+    position: relative;
+}
+
+.menu-list a{
+    color: black;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.menu-list a:hover{
+    color: red;
 }
