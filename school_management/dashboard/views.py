@@ -141,3 +141,22 @@ def update_teacher(request, id):
     if request.method == "GET":
         teacher = Teacher.objects.get(pk=id)
         return render(request, "Update_Forms/Teacher_Update.html", {"teacher": teacher})
+    
+    if request.method == "POST":
+        teacher = Teacher.objects.get(pk=id)
+        teacher.regitster_teacher(request.POST)
+
+        return redirect("admin_teacher")
+
+
+# -----------------------------------------------------------------------------------------------
+def update_employee(request, id):
+    if request.method == "GET":
+        employee = Employee.objects.get(pk=id)
+        return render(request, "Update_Forms/Employee_Update.html", {"emp": employee})
+    
+    if request.method == "POST":
+        employee = Employee.objects.get(pk=id)
+        employee.register_employee(request.POST)
+
+        return redirect("admin_employee")

@@ -68,6 +68,13 @@
                                 visibility
                             </span>
                         </a>
+
+                        <a title="Update" href="{% url 'update_employee' emp.id %}">
+                            <span class="material-symbols-outlined">
+                                edit_note
+                            </span>
+                        </a>
+
                         <a href="{% url 'delete_employee' emp.id %}">
                             <span class="material-symbols-outlined">
                                 delete

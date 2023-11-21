@@ -7,7 +7,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <link rel="stylesheet" href="{% static 'Update_Form.css' %}">
+  <link rel="stylesheet" href="{% static 'Styles/Admin_Dashboard.css' %}">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 
@@ -15,45 +15,53 @@
 
 <body>
 
-  <div class="form-container d-flex align-items-center justify-content-center vh-100">
-    <div class="form content w-50 shadow p-4">
-      <h3 class="text-center mb-5">Update Teacher Details</h3>
+  <div class="form-container update-form d-flex align-items-center justify-content-center vh-100">
+    <div class="form content w-50 shadow p-4 bg-white rounded">
+      <h3 class="text-center mb-5">Update Teacher Details({{teacher.id}})</h3>
       <form action="" class="g-3 row" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="col-6">
+          <label for="name" class="form-label text-secondary">Name</label>
+          <input type="text" class="form-control" placeholder="Name" value="{{teacher.Name}}">
+        </div>
 
         <div class="col-6">
-          <input type="text" class="form-control" placeholder="Name">
-        </div>
-
-        <div class="col-6">
-          <input type="text" class="form-control" placeholder="Subject">
+          <label for="name" class="form-label text-secondary">Subject</label>
+          <input type="text" class="form-control" placeholder="Subject" value="{{teacher.Subject}}">
         </div>
 
         <div class="col-4">
-          <input type="text" class="form-control" placeholder="Qualification">
+          <label for="name" class="form-label text-secondary">Qualification</label>
+          <input type="text" class="form-control" placeholder="Qualification" value="{{teacher.Qualification}}">
         </div>
 
         <div class="col-4">
-          <input type="text" class="form-control" placeholder="City">
+          <label for="name" class="form-label text-secondary">City</label>
+          <input type="text" class="form-control" placeholder="City" value="{{teacher.City}}">
         </div>
 
         <div class="col-4">
-          <input type="text" class="form-control" placeholder="Contact">
+          <label for="name" class="form-label text-secondary">Contact</label>
+          <input type="text" class="form-control" placeholder="Contact" value="{{teacher.Contact}}">
         </div>
 
         <div class="col-4">
-          <input type="text" class="form-control" placeholder="DOB">
+          <label for="name" class="form-label text-secondary">DOB</label>
+          <input type="text" class="form-control" placeholder="DOB" value="{{teacher.Dob}}">
         </div>
 
         <div class="col-4">
-          <input type="text" class="form-control" placeholder="Salary">
+          <label for="name" class="form-label text-secondary">Salary</label>
+          <input type="text" class="form-control" placeholder="Salary" value="{{teacher.Salary}}">
         </div>
 
         <div class="col-4">
-          <input type="text" class="form-control" placeholder="Performance">
+          <label for="name" class="form-label text-secondary">Performance</label>
+          <input type="text" class="form-control" placeholder="Performance" value="{{teacher.Performance}}">
         </div>
 
         <div class="col-12">
-          <input type="file">
+          <input type="file" value="{{teacher.Image}}">
         </div>
 
         <div class="row g-1 justify-content-end">

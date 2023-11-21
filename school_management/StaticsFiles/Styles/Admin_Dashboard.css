@@ -587,6 +587,10 @@ button:hover {
 
 }
 
+.update-form{
+    background: url("../Images/watercolor-4116932_1280.png") no-repeat center center;
+}
+
 /* Add Zoom Animation */
 .animate {
     -webkit-animation: animatezoom 0.6s;
