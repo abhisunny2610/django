@@ -134,3 +134,10 @@ def delete_employee(request, id):
         employee = Employee.objects.get(pk=id)
         employee.delete()
         return redirect("admin_employee")
+    
+
+# -----------------------------------------------------------------------------------------------
+def update_teacher(request, id):
+    if request.method == "GET":
+        teacher = Teacher.objects.get(pk=id)
+        return render(request, "Update_Forms/Teacher_Update.html", {"teacher": teacher})

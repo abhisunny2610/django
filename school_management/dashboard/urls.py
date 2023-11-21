@@ -12,4 +12,7 @@ urlpatterns = [
     path("delete_teacher/<int:id>", view=views.delete_teacher, name="delete_teacher"),
     path("delete_student/<int:id>", view=views.delete_student, name="delete_student"),
     path("delete_employee/<int:id>", view=views.delete_employee, name="delete_employee"),
+
+    # update urls
+    path('update_teacher/<int:id>', view=views.update_teacher, name="update_teacher")
 ]
