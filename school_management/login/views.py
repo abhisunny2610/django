@@ -28,6 +28,13 @@ def login_as_teacher(request, username, password):
     
 
 # -----------------------------------------------------------------------------------------------
+# def login_as_admin(request, username, password):
+#     user = auth.authenticate(request=request, username=username, password=password)
+#     if use
+
+
+
+# -----------------------------------------------------------------------------------------------
 # login view
 def login(request):
     if request.method == "GET":
@@ -72,18 +79,18 @@ def signup(request):
 # -----------------------------------------------------------------------------------------------
 def dashboard_login(request):
     if request.method == "GET":
-        return render(request, "dashboard_login.html")
+        return render(request, "admin_dashboard.html")
     
-    if request.method == "POST":
-        username = request.POST.get("username")
-        password = request.POST.get("password")
+    # if request.method == "POST":
+    #     username = request.POST.get("username")
+    #     password = request.POST.get("password")
 
-        user = auth.authenticate(request, username=username, password=password)
+    #     user = auth.authenticate(request, username=username, password=password)
 
-        if user:
-            auth.login(request, user)
-            return redirect("dashboard")
-        else:
-            return HttpResponse("Username or password not found")
+    #     if user:
+    #         auth.login(request, user)
+    #         return redirect("dashboard")
+    #     else:
+    #         return HttpResponse("Username or password not found")
         
-    return redirect("admin_dashboard")
+    # return redirect("dashboard")
