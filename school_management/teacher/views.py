@@ -84,7 +84,8 @@ def delete_question(request , id):
 # -----------------------------------------------------------------------------------------------
 def update_question(request, id):
     if request.method == "GET":
-        pass
+        question = AddQuestion.objects.get(pk=id)
+        return render(request, "Update_Forms/Question_Update.html", {"question": question})
 
     if request.method == "POST":
         pass

@@ -70,12 +70,12 @@
                                 </span>
     
                                 <div class="menu-list">
-                                    <button id="add_pop_button">
+                                    <a title="View Profile" href="{% url 'view_employee' emp.id %}">
                                         <span class="material-symbols-outlined">
                                             visibility
                                         </span>
                                         View
-                                    </button>
+                                    </a>
             
                                     <a title="Update" href="{% url 'update_employee' emp.id %}">
                                         <span class="material-symbols-outlined">
