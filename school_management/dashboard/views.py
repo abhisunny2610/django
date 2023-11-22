@@ -173,3 +173,24 @@ def update_student(request, id):
         student.regitster_teacher(request.POST)
 
         return redirect("admin_student")
+    
+
+# -----------------------------------------------------------------------------------------------
+def view_student(request, id):
+    if request.method == "GET":
+        student = Student.objects.get(pk=id)
+        return render(request, "Profile_View/Student_View.html", {"student": student})
+    
+
+# -----------------------------------------------------------------------------------------------
+def view_teacher(request, id):
+    if request.method == "GET":
+        teacher = Teacher.objects.get(pk=id)
+        return render(request, "Profile_View/Teacher_View.html", {"teacher": teacher})
+    
+
+# -----------------------------------------------------------------------------------------------
+def view_employee(request, id):
+    if request.method == "GET":
+        employee = Employee.objects.get(pk=id)
+        return render(request, "Profile_View/Employee_View.html", {"emp": employee})
