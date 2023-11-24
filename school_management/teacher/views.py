@@ -88,5 +88,8 @@ def update_question(request, id):
         return render(request, "Update_Forms/Question_Update.html", {"question": question})
 
     if request.method == "POST":
-        pass
+        question = AddQuestion.objects.get(pk=id)
+        question.add_question(request.POST)
+
+        return redirect("answer")
 
