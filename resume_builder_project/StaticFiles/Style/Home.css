@@ -3,3 +3,19 @@
     padding: 0;
     margin: 0;
 }
+
+:root{
+    --purple: #4314b6;
+}
+
+.btn-purple{
+    background-color: var(--purple);
+}
+
+.text-purple{
+    color: var(--purple);
+}
+
+.actives{
+    color: var(--purple);
+}

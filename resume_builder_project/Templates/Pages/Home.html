@@ -1,5 +1,22 @@
-{% extends "./index.html" %}
+{% extends "index.html" %}
+{% load static %}
 
 {% block content %}
-  
-{% endblock  %}
+
+<section class="hero mt-5">
+<div class="row">
+    <div class="col-6">
+        <h3>Create a professional resume</h3>
+        <p>Build beautiful, recruiter-tested resumes in a few clicks! Our resume builder is powerful and easy to use,
+            with a range of amazing functions. Custom-tailor resumes for any job within minutes. Increase your interview
+            chances and rise above the competition.</p>
+            <button class="btn btn-md btn-purple text-light fw-bold">Create Resume</button>
+    </div>
+    <div class="col-6 d-flex">
+        <img src="{% static 'Images/resume1.jpg' %}" alt="" width="250px">
+        <img src="{% static 'Images/resume2.jpg' %}" alt="" width="250px">
+    </div>
+</div>
+</section>
+
+{% endblock %}
