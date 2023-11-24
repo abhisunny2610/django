@@ -3,20 +3,83 @@
 
 {% block content %}
 
-<section class="hero mt-5">
-<div class="row">
-    <div class="col-6">
-        <h3>Create a professional resume</h3>
-        <p>Build beautiful, recruiter-tested resumes in a few clicks! Our resume builder is powerful and easy to use,
-            with a range of amazing functions. Custom-tailor resumes for any job within minutes. Increase your interview
-            chances and rise above the competition.</p>
-            <button class="btn btn-md btn-purple text-light fw-bold">Create Resume</button>
+<section class="hero py-5 px-5">
+    <div class="row">
+        <div class="col-6">
+            <h1 class="h1 fw-bold">Create a <br>professional resume</h1>
+            <p class="mt-4 fs-5 text-secondary">Build beautiful, recruiter-tested resumes in a few clicks! Our resume
+                builder is powerful and easy to use,
+                with a range of amazing functions. Custom-tailor resumes for any job within minutes. Increase your
+                interview
+                chances and rise above the competition.</p>
+            <button class="btn btn-lg btn-purple text-light fw-bold">Create Resume</button>
+        </div>
+        <div class="col-6 d-flex mt-4 gap-2">
+            <img src="{% static 'Images/resume1.jpg' %}" alt="" width="250px">
+            <img src="{% static 'Images/resume2.jpg' %}" alt="" width="250px">
+        </div>
     </div>
-    <div class="col-6 d-flex">
-        <img src="{% static 'Images/resume1.jpg' %}" alt="" width="250px">
-        <img src="{% static 'Images/resume2.jpg' %}" alt="" width="250px">
+</section>
+
+
+
+<section class="section2 py-6 px-5">
+    <div class="row">
+        <div class="col-7">
+            <img src="{% static 'Images/vecteezy.jpg' %}" alt="" width="500px">
+        </div>
+        <div class="col-5">
+            <h3 class="h1 fw-bold">
+                Create a resume to <br>land your next job</h3>
+            <p class="mt-4 fs-5 text-secondary">
+                Create a resume to land your next job
+                We have developed a resume builder based on feedback from thousands of users, recruiter expertise,
+                stellar template design and the best hiring practices. The goal is simple: help you land that dream job
+                interview! Get an advantage in the modern professional environment.</p>
+            <button class="btn btn-lg btn-purple text-light fw-bold">Build Your Resume</button>
+        </div>
     </div>
-</div>
+</section>
+
+<section class="how-work py-6 px-5">
+    <h1 class="text-center fw-bold text-secondary">How It Work</h1>
+    <div class="steps row mt-5">
+        <div class="step-1 col-4 d-flex gap-4">
+            <h6 class="border text-secondary border-secondary border-2 rounded-circle text-center  p-2"
+                style="width: 40px; height: 40px;">1</h6>
+            <div>
+                <h3 class="text-purple">Fill the forms</h3>
+                <p class="fs-6 text-secondary">Start by filling in your resume details.</p>
+            </div>
+        </div>
+        <div class="step-1 col-4 d-flex gap-4">
+            <h6 class="border text-secondary border-secondary border-2 rounded-circle text-center p-2"
+                style="width: 40px; height: 40px;">2</h6>
+            <div>
+                <h3 class="text-purple">Pick a template</h3>
+                <p class="fs-6 text-secondary">Select a resume template that embodies your style.</p>
+            </div>
+        </div>
+        <div class="step-1 col-4 d-flex gap-4">
+            <h6 class="border text-secondary border-secondary border-2 rounded-circle text-center p-2"
+                style="width: 40px; height: 40px;">3</h6>
+            <div>
+                <h3 class="text-purple">Download your CV</h3>
+                <p class="fs-6 text-secondary">Download your resume instantly and make changes afterwards.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="love py-6 px-5 d-flex align-items-center justify-content-center">
+
+    <div style="max-width: 500px;">
+        <h1 class="text-center fw-bold">Why our customers love our resume builder</h1>
+        <p class="text-secondary fs-5 mt-4 text-center">Resume.io’s online builder tool and collection of elegant,
+            recruiter-tested templates are used by more than 10
+            million people around the globe! We are incredibly proud to empower so many active professionals.</p>
+        <button class="btn btn-lg btn-purple text-light fw-bold ">Get Started</button>
+    </div>
 </section>
 
 {% endblock %}
