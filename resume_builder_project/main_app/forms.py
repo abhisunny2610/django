@@ -18,12 +18,14 @@ class PersonDetails(forms.Form):
     skills_4 = forms.CharField(required=False, label="Skill 4")
 
     # Experience Field
-    experience_1_title = forms.CharField()
-    experience_1_dur = forms.CharField()
-    experience_1_desc = forms.CharField()
+    experience_1_title = forms.CharField(label="Job Title")
+    experience_1_dur = forms.CharField(label="Job Duration")
+    experience_1_cname = forms.CharField(label="Company Name")
+    experience_1_desc = forms.CharField(label="Job Description", widget=forms.Textarea)
     experience_2_title = forms.CharField(required=False)
     experience_2_dur = forms.CharField(required=False)
-    experience_2_desc = forms.CharField(required=False)
+    experience_2_cname = forms.CharField(required=False, label="Company Name")
+    experience_2_desc = forms.CharField(required=False,label="Job Description", widget=forms.Textarea)
 
     # Education Field
     education_1=forms.CharField(label="Degree obtained")
