@@ -12,6 +12,7 @@ class PersonDetails(models.Model):
     first_name = models.CharField(max_length=30)
     last_name = models.CharField(max_length=30)
     profession = models.CharField(max_length=50)
+    profile = models.TextField()
     contact = models.CharField(max_length=10)
     email = models.EmailField()
     city = models.CharField(max_length=30)
@@ -44,7 +45,7 @@ class EducationDeatils(models.Model):
         return " - ".join([self.education_1_start, self.education_1_end])
 
     def educ_duraction_2(self):
-        return " - ".join([self.education_1_start, self.education_1_end])
+        return " - ".join([self.education_2_start, self.education_2_end])
     
 
 class SkillsDetails(models.Model):
@@ -58,7 +59,34 @@ class SkillsDetails(models.Model):
 
 class ProjectDetails(models.Model):
     person = models.ForeignKey(PersonDetails, on_delete=models.CASCADE)
+    project_1 = models.CharField(max_length=50)
+    project_1_url = models.URLField(blank=True, null=True)
+    project_1_desc = models.TextField(blank=True, null=True)
+
+    project_2 = models.CharField(max_length=50)
+    project_2_url = models.URLField(blank=True, null=True)
+    project_2_desc = models.TextField(blank=True, null=True)
+
+
+class ExperienceDetails(models.Model):
+    person = models.ForeignKey(PersonDetails, on_delete=models.CASCADE)
+    experience_1 = models.CharField(max_length=30)
+    experience_1_comapny = models.CharField(max_length=50)
+    experience_1_start = models.DateField()
+    experience_1_end= models.DateField()
+    experience_1_description = models.TextField(null=True, blank=True)
+
+    experience_2 = models.CharField(max_length=30, blank=True, null=True)
+    experience_2_company = models.CharField(max_length=50, blank=True, null=True)
+    experience_2_start = models.DateField()
+    experience_2_end= models.DateField()
+    experience_2_description = models.TextField(null=True ,blank=True)
+
+    def ex_duraction_1(self):
+        return " - ".join([self.experience_1_start, self.experience_1_end])
     
+    def ex_duraction_2(self):
+        return " - ".join([self.experience_2_start, self.experience_2_end])
 
 
  
