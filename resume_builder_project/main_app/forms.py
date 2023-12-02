@@ -1,55 +1,34 @@
 from django import forms
+from .models import PersonDetails, ExperienceDetails, EducationDeatils, ProjectDetails, SkillsDetails
 
 # validators=[RegexValidator(regex='^(\+?\d{1,3})?[-.\s]?\(?\d{3}\)?[-.\s]?\d{3}[-.\s]?\d{4}$')]
 
 
-class PersonDetailsForm(forms.Form):
+class PersonForm(forms.ModelForm):
+    class Meta:
+        model = PersonDetails
+        fields = ('first_name', "last_name", "profession", "profile",
+                  "contact", "email", "city", "github", "linkedin")
+        
 
-    # Personal Details Field
-    name = forms.CharField(label="Name", max_length=30)
-    email = forms.EmailField(label="E-mail")
-    contact = forms.CharField(max_length=10, label="Contact")
-    address = forms.CharField(label="Address")
+class EducationForm(forms.ModelForm):
+    class Meta:
+        model = EducationDeatils
+        fields = ('education_1','education_1_college','education_1_start','education_1_end','education_1_description', 'education_2','education_2_college','education_2_start','education_2_end','education_2_description')
 
-    # Skills Field
-    skills_1 = forms.CharField(label="Skill 1")
-    skills_2 = forms.CharField(label="Skill 2")
-    skills_3 = forms.CharField(required=False, label="Skill 3")
-    skills_4 = forms.CharField(required=False, label="Skill 4")
+class SkillsForm(forms.ModelForm):
+    class Meta:
+        model = SkillsDetails
+        fields = ('skill_1', 'skill_2', 'skill_3', "skill_4", "skill_5")
 
-    # Soft Skills 
-    soft_skills_1 = forms.CharField(label="Soft Skill 1")
-    soft_skills_2 = forms.CharField(label="Soft Skill 2")
-    soft_skills_3 = forms.CharField(required=False, label="Soft Skill 3")
-    soft_skills_4 = forms.CharField(required=False, label="Soft Skill 4")
 
-    # Experience Field
-    experience_1_title = forms.CharField(label="Job Title")
-    experience_1_dur = forms.CharField(label="Job Duration")
-    experience_1_cname = forms.CharField(label="Company Name")
-    experience_1_desc = forms.CharField(label="Job Description", widget=forms.Textarea)
-    experience_2_title = forms.CharField(required=False)
-    experience_2_dur = forms.CharField(required=False)
-    experience_2_cname = forms.CharField(required=False, label="Company Name")
-    experience_2_desc = forms.CharField(required=False,label="Job Description", widget=forms.Textarea)
+class ExerpienceForm(forms.ModelForm):
+    class Meta:
+        model = ExperienceDetails
+        fields= ('experience_1','experience_1_company','experience_1_start','experience_1_end','experience_1_description', 'experience_2','experience_2_company','experience_2_start','experience_2_end','experience_2_description')
 
-    # Education Field
-    education_1=forms.CharField(label="Degree obtained")
-    education_1_dur=forms.CharField(label="Duration")
-    education_1_name = forms.CharField(label="College Name")
-    education1_score=forms.CharField(label="Score")
-    education_2=forms.CharField(label="Degree obtained")
-    education_2_dur=forms.CharField(label="Duration")
-    education_2_name = forms.CharField(label="College Name")
-    education2_score=forms.CharField(label="Score")
 
-    # Project Fields
-    project_1 = forms.CharField(label="Project Name")
-    project_1_desc = forms.CharField(label="Project Description", required=False, widget=forms.Textarea)
-    # project_1_url = forms.CharField(label="Project Url", required=False, widget=forms.URLField,)
-    project_2 = forms.CharField(label="Project Name")
-    project_2_desc = forms.CharField(label="Project Description", required=False, widget=forms.Textarea)
-    # project_2_url = forms.CharField(label="Project Url", required=False, widget=forms.URLField)
-    project_3 = forms.CharField(label="Project Name", required=False)
-    project_3_desc = forms.CharField(label="Project Description", required=False, widget=forms.Textarea)
-    # project_3_url = forms.CharField(label="Project Url", required=False, widget=forms.URLField)
+class ProjectForm(forms.ModelForm):
+    class Meta:
+        model = ProjectDetails
+        fields = ('project_1','project_1_url','project_1_desc')

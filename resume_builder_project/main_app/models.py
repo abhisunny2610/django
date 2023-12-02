@@ -23,7 +23,7 @@ class PersonDetails(models.Model):
         return " ".join([self.first_name, self.last_name])
 
     def __str__(self):
-        return self.name
+        return self.first_name + self.last_name
     
 
 
@@ -71,7 +71,7 @@ class ProjectDetails(models.Model):
 class ExperienceDetails(models.Model):
     person = models.ForeignKey(PersonDetails, on_delete=models.CASCADE)
     experience_1 = models.CharField(max_length=30)
-    experience_1_comapny = models.CharField(max_length=50)
+    experience_1_company = models.CharField(max_length=50)
     experience_1_start = models.DateField()
     experience_1_end= models.DateField()
     experience_1_description = models.TextField(null=True, blank=True)
@@ -83,7 +83,7 @@ class ExperienceDetails(models.Model):
     experience_2_description = models.TextField(null=True ,blank=True)
 
     def ex_duraction_1(self):
-        return " - ".join([self.experience_1_start, self.experience_1_end])
+        return " - ".join([self.experience_1_start, self.experience_1_])
     
     def ex_duraction_2(self):
         return " - ".join([self.experience_2_start, self.experience_2_end])
