@@ -31,14 +31,14 @@ class EducationDeatils(models.Model):
     person = models.ForeignKey(PersonDetails, on_delete=models.CASCADE)
     education_1 = models.CharField(max_length=30)
     education_1_college = models.CharField(max_length=50)
-    education_1_start = models.DateField()
-    education_1_end= models.DateField()
+    education_1_start = models.CharField(max_length=30,null=True, blank=True)
+    education_1_end= models.CharField(max_length=30,blank=True, null=True)
     education_1_description = models.TextField(null=True, blank=True)
 
     education_2 = models.CharField(max_length=30, blank=True, null=True)
     education_2_college = models.CharField(max_length=50, blank=True, null=True)
-    education_2_start = models.DateField()
-    education_2_end= models.DateField()
+    education_2_start = models.CharField(max_length=30,blank=True, null=True)
+    education_2_end= models.CharField(max_length=30,blank=True, null=True)
     education_2_description = models.TextField(null=True ,blank=True)
 
     def educ_duraction_1(self):
@@ -72,14 +72,14 @@ class ExperienceDetails(models.Model):
     person = models.ForeignKey(PersonDetails, on_delete=models.CASCADE)
     experience_1 = models.CharField(max_length=30)
     experience_1_company = models.CharField(max_length=50)
-    experience_1_start = models.DateField()
-    experience_1_end= models.DateField()
+    experience_1_start = models.CharField(max_length=30,blank=True, null=True)
+    experience_1_end= models.CharField(max_length=30,blank=True, null=True)
     experience_1_description = models.TextField(null=True, blank=True)
 
     experience_2 = models.CharField(max_length=30, blank=True, null=True)
     experience_2_company = models.CharField(max_length=50, blank=True, null=True)
-    experience_2_start = models.DateField()
-    experience_2_end= models.DateField()
+    experience_2_start = models.CharField(max_length=30,blank=True, null=True)
+    experience_2_end= models.CharField(max_length=30,blank=True, null=True)
     experience_2_description = models.TextField(null=True ,blank=True)
 
     def ex_duraction_1(self):
